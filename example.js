@@ -406,9 +406,94 @@ console.log(formattedString);
 
 // Дана некоторая строка: 'AbCdE'
 // Смените регистр букв этой строки на противоположный. В нашем случае должно получится следующее: 'aBcDe'
+let str12 = 'AbCdE';
+let res = '';
+for (i = 0; i < str12.length; i++) {
+    if (i % 2 === 0) {
+        res += str12[i].toLowerCase();
+    } else {
+        res += str12[i].toUpperCase()
+    }
+}
+console.log(res);
+
 
 // Дан некоторый массив с числами, например, вот такой: [1, 2, 3, 4, 5, 6]
 // Слейте пары элементов вместе: [12, 34, 56]
+let array13 = [1, 2, 3, 4, 5, 6];
+let arraySort1 = [];
+for (i = 0; i < array13.length; i += 2) {
+    arraySort1.push(array13[i] * 10 + array13[i + 1]);
+}
+console.log(arraySort1);
+
 
 // Дана некоторая строка со словами:'aaa bbb ccc eee fff'
 // Сделайте заглавным первый символ каждого второго слова в этой строке. В нашем случае должно получится следующее: 'aaa Bbb ccc Eee fff'
+function exs_266() {
+    let inputString = 'aaa bbb ccc eee fff';
+    let words = inputString.split(' ');
+    for (let i = 1; i < words.length; i += 2) {
+        words[i] = words[i][0].toUpperCase() + words[i].substring(1);
+    }
+    let resultString = words.join(' ');
+    return resultString;
+}
+
+
+//Дана некоторая строка:'a bc def ghij'
+// Переведите в верхний регистр все подстроки, в которых количество букв меньше или равно трем. В нашем случае должно получится следующее: 'A BC DEF ghij'
+function exa_271() {
+    let inputStr = 'a bc def ghij';
+    let words = inputStr.split(' ');
+    for (i = 0; i < words.length; i++) {
+        if (words[i].length <= 3) {
+            words[i] = words[i].toUpperCase();
+        }
+    }
+    let resStr = words.join(' ');
+    return resStr;
+}
+exa_271();
+
+
+//Дан символ. Узнайте, в каком регистре этот символ - в верхнем или нижнем.
+function exa_272(k) {
+    if (k === k.toUpperCase()) {
+        return console.log('буква в верхнем');
+    } else { console.log('буква в нижнем регистре'); }
+}
+
+
+//Дано некоторое число, например, такое: 123789
+// Удалите из этого числа все нечетные цифры. В нашем случае получится такой результат: 28
+function exa_273() {
+    let number = 123789;
+    let x = 1;
+    let result = 0;
+    while (number > 0) {
+        let lastNumber = number % 10;
+        if (lastNumber % 2 === 0) {
+            result += lastNumber * x;
+            x = 10;
+        }
+        number = Math.floor(number / 10);
+    }
+    return result;
+}
+
+
+//Дана строка с буквами. Проверьте, что в этой строке не более двух заглавных букв.
+function exa_281() {
+    let word = 'kerERhKr';
+    let wordsort = word.split('');
+    let count = 0;
+    for (let i = 0; i < wordsort.length; i++) {
+        if (wordsort[i] === wordsort[i].toUpperCase()) {
+            count += 1;
+        }
+    }
+    if (count > 2) {
+        return ('в строке более двух заглавных букв');
+    }
+}
