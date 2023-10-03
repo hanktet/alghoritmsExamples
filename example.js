@@ -497,3 +497,201 @@ function exa_281() {
         return ('в строке более двух заглавных букв');
     }
 }
+
+
+//Дана некоторая строка: '1 22 333 4444 22 5555 1'
+// Удалите из этой строки все подстроки, в которых количество символов больше трех. 
+// В нашем случае должно получится следующее: '1 22 333 22 1'
+function exa_282() {
+    let inputStr = '1 22 333 4444 22 5555 1';
+    let words = inputStr.split(' ');
+    let result = [];
+
+    for (let i = 0; i < words.length; i++) {
+        if (words[i].length <= 3) {
+            result.push(words[i]);
+        }
+    }
+    return result.join(' ');
+}
+
+
+// Даны два массива:
+// let arr1 = [1, 2, 3];
+// let arr2 = ['a', 'b', 'c'];
+// Слейте эти массивы в новый массив следующим образом: [1, 2, 'a', 'b', 'c', 3]
+function exa_283() {
+    let arr1 = [1, 2, 3];
+    let arr2 = ['a', 'b', 'c'];
+    let mergedArray = arr1.concat(arr2);
+    mergedArray.splice(2, 0, 'a', 'b', 'c');
+    mergedArray.splice(-3);
+
+    console.log(mergedArray);
+}
+
+
+//Дано некоторое число: 123456
+// Найдите сумму пар цифр этого числа. В нашем случае имеется ввиду следующее: 12 + 34 + 56
+function exa_291() {
+    let number0 = 123456;
+    let sum0 = 0;
+
+    while (number0 > 0) {
+        let lastTwoDigits = number0 % 100;
+        sum0 += lastTwoDigits;
+        number0 = Math.floor(number0 / 100);
+    }
+
+    console.log(sum0);
+}
+
+
+// Дан массив с числами: [1, 2, 3, 4, 5]
+// Выведите в консоль элементы этого массива в обратном порядке.
+function exa_292() {
+    let arr = [1, 2, 3, 4, 5];
+
+    for (let i = arr.length - 1; i >= 0; i--) {
+        console.log(arr[i]);
+    }
+}
+
+
+// Дана строка с буквами и цифрами. Проверьте, что в этой строке не более трех букв.
+function exa_2101() {
+    let str = "abdc123";
+    let letterCount = 0;
+
+    for (let i = 0; i < str.length; i++) {
+        let char = str[i];
+
+        if ((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z')) {
+            letterCount++;
+
+            if (letterCount > 3) {
+                console.log("cтрока содержит более трех букв.");
+                return;
+            }
+        }
+    }
+
+    console.log("cтрока содержит не более трех букв.");
+}
+
+
+// Дано число. Получите первую четную цифру с конца этого числа.
+function exa_2102() {
+    let number = 123456789;
+    while (number > 0) {
+        let lastNumber = number % 10;
+
+        if (lastNumber % 2 === 0) {
+            return lastNumber;
+        }
+
+        number = Math.floor(number / 10);
+    }
+
+    return -1;
+
+    if (lastNumber !== -1) {
+        console.log("первая четная цифра с конца числа:", lastNumber);
+    } else {
+        console.log("d числе нет четных цифр.");
+    }
+}
+
+
+// Дана некоторая строка: 'abcde abcde abcde'
+// Замените в ней первый символ каждого слова на '!': '!bcde !bcde !bcde'
+function exa_2103() {
+
+    let inputString = 'abcde abcde abcde';
+
+    let words = inputString.split(' ');
+
+    for (let i = 0; i < words.length; i++) {
+        let word = words[i];
+        if (word.length > 0) {
+            words[i] = '!' + word.substring(1);
+        }
+    }
+
+    let result = words.join(' ');
+    return result;
+}
+
+// Дан массив с числами: [1, 2, 3, 3, 4, 5]
+// Проверьте, что в этом массиве есть два одинаковых элемента подряд.
+function exa_2104(params) {
+    let numbers = [1, 2, 3, 3, 4, 5];
+    let hasTwoElements = false;
+
+    for (let i = 1; i < numbers.length; i++) {
+        if (numbers[i] === numbers[i - 1]) {
+            hasTwoElements = true;
+            break;
+        }
+    }
+
+    if (hasTwoElements) {
+        console.log("в массиве есть два одинаковых элемента подряд.");
+    } else {
+        console.log("в массиве нет двух одинаковых элементов подряд.");
+    }
+}
+
+
+// Дано некоторое число. Проверьте, что цифры этого числа расположены по возрастанию.
+function exa31() {
+
+    let inputNumber = 12345;
+    let numberStr = inputNumber.toString();
+    let isAscending = true;
+
+    for (let i = 1; i < numberStr.length; i++) {
+        let currentDigit = +(numberStr[i]);
+        let previousDigit = +(numberStr[i - 1]);
+
+        if (currentDigit < previousDigit) {
+            isAscending = false;
+            break;
+        }
+    }
+
+    if (isAscending) {
+        console.log("Цифры числа расположены по возрастанию.");
+    } else {
+        console.log("Цифры числа не расположены по возрастанию.");
+    }
+}
+
+
+// Дан массив: [1, '', 2, 3, '', 5]
+// Удалите из массива все пустые строки.
+function exa_32() {
+    let arr = [1, '', 2, 3, '', 5];
+    let newArr = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== '') {
+            newArr.push(arr[i]);
+        }
+    }
+
+    console.log(newArr);
+}
+
+// Дан массив:
+// [
+// 	[2, 1, 4, 3, 5],
+// 	[3, 5, 2, 4, 1],
+// 	[4, 3, 1, 5, 2],
+// ]  Отсортируйте элементы в каждом подмассиве.
+
+
+// Даны два массива:
+// let arr1 = [1, 2, 3];
+// let arr2 = [1, 2, 3, 4, 5];
+// Удалите из большего массива лишние элементы с конца так, чтобы длины массивов стали одинаковыми.
