@@ -46,8 +46,7 @@ for (let i = 0; i < count1; i++) {
 console.log(array4);
 
 
-//Дано некоторое число: 12345
-// Выведите в консоль все его символы с конца.
+//Дано некоторое число: 12345. Выведите в консоль все его символы с конца.
 let variable = 12345;
 let stringVaruable = variable.toString();
 for (let i = stringVaruable.length - 1; i >= 0; i--) {
@@ -313,3 +312,103 @@ for (let i = 0; i < words.length; i++) {
 }
 
 console.log(resultString);
+
+
+//Дана некоторая строка, например, вот такая: '023m0df0dfg0'
+// Получите массив позиций всех нулей в этой в строке.
+let srt2 = '023m0df0dfg0';
+let zeroPositions = [];
+
+for (let i = 0; i < srt2.length; i++) {
+    if (srt2[i] === '0') {
+        zeroPositions.push(i);
+    }
+}
+
+console.log(zeroPositions);
+
+
+//Дана некоторая строка: 'abcdefg'
+// Удалите из этой строки каждый третий символ. В нашем случае должно получится следующее: 'abdeg'
+let str3 = 'abcdefg';
+let finalStr = '';
+for (let i = 0; i < srt3.length; i++) {
+    if ((i + 1) % 3 !== 0) {
+        finalStr += str3[i];
+    }
+}
+console.log(finalStr);
+
+// Дан некоторый массив, например, вот такой: [1, 2, 3, 4, 5, 6]
+// Поделите сумму элементов, стоящих на четных позициях, на сумму элементов, стоящих на нечетных позициях.
+let array11 = [1, 2, 3, 4, 5, 6];
+let sumEven = 0;
+let sumOdd = 0;
+for (let i = 0; i < array.length; i++) {
+    if (i % 2 === 0) {
+        sumEven += array11[i]; // Суммируем элементы на четных позициях
+    } else {
+        sumOdd += array11[i]; // Суммируем элементы на нечетных позициях
+    }
+}
+
+if (sumOdd !== 0) {
+    const result = sumEven / sumOdd;
+    console.log(result);
+} else {
+    console.log("cумма элементов на нечетных позициях равна нулю.");
+}
+
+
+//Дана некоторая строка с буквами и цифрами. Получите массив позиций всех цифр из этой строки.
+let str4 = 'abc123def456';
+let digitPositions = [];
+
+for (let i = 0; i < str4.length; i++) {
+    let char = str4[i];
+    if (char >= '0' && char <= '9') {
+        digitPositions.push(i);
+    }
+}
+console.log(digitPositions);
+
+
+// Дан массив с некоторыми числами, например, вот такой: [123, 456, 789]
+// Напишите код, который перевернет числа в этом массиве по следующему принципу: [321, 654, 987]
+let numbers = [123, 456, 789];
+let reversedNumbers = numbers.map(number => {
+    let reversedString = number.toString().split('').reverse().join('');
+    return +reversedString;
+});
+
+console.log(reversedNumbers);
+
+// Дана некоторая строка с числом: '1234567'
+// Отделите тройки цифр пробелами, начиная с конца числа. В нашем случае должно получится следующее: '1 234 567'
+
+let str5 = '1234567';
+let formattedString = '';
+
+for (let i = str5.length; i > 0; i -= 3) {
+    let start = Math.max(0, i - 3);
+    let end = i;
+    let segment = str5.slice(start, end);
+
+    if (formattedString.length > 0) {
+        formattedString = ' ' + formattedString;
+    }
+
+    formattedString = segment + formattedString;
+}
+
+console.log(formattedString);
+
+
+// Дана некоторая строка: 'AbCdE'
+// Смените регистр букв этой строки на противоположный. В нашем случае должно получится следующее: 'aBcDe'
+
+// Дан некоторый массив с числами, например, вот такой: [1, 2, 3, 4, 5, 6]
+// Слейте пары элементов вместе: [12, 34, 56]
+
+// Дана некоторая строка со словами:'aaa bbb ccc eee fff'
+// Сделайте заглавным первый символ каждого второго слова в этой строке. В нашем случае должно получится следующее: 'aaa Bbb ccc Eee fff'
