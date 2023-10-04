@@ -695,3 +695,283 @@ function exa_32() {
 // let arr1 = [1, 2, 3];
 // let arr2 = [1, 2, 3, 4, 5];
 // Удалите из большего массива лишние элементы с конца так, чтобы длины массивов стали одинаковыми.
+
+
+//2.7.2
+//Дано число. Получите массив делителей этого числа.
+let number12 = 24;
+let divisors = [];
+for (let i = 1; i <= number12; i++) {
+    if (number12 % i === 0) {
+        divisors.push(i);
+    }
+}
+console.log(result);
+
+
+//2.7.3
+// Даны два числа. Получите массив общих делителей этих чисел.
+let num1 = 12;
+let num2 = 18;
+
+let commonDivisors = [];
+
+for (let i = 1; i <= num2; i++) {
+    if (num1 % i === 0 && num2 % i === 0) {
+        commonDivisors.push(i);
+    }
+}
+
+console.log(commonDivisors);
+
+
+////2.7.4
+// Дано число. Проверьте, что у этого числа есть только один делитель, кроме него самого и единицы.
+let num = 17;
+let divisorsCount = 0;
+
+for (let i = 1; i <= num; i++) {
+    if (num % i === 0) {
+        divisorsCount++;
+        if (divisorsCount > 2) {
+            break;
+        }
+    }
+}
+
+if (divisorsCount === 2) {
+    console.log(`${num} - простое число`);
+} else {
+    console.log(`${num} - не простое число`);
+}
+
+////2.7.5
+// Через запятую написаны числа. Получите максимальное из этих чисел.
+let numbersStr = "5, 10, 15, 25, 7";
+let numbersArr = numbersStr.split(",").map(Number);
+
+let maxNumber = numbersArr[0];
+
+for (let i = 1; i < numbersArr.length; i++) {
+    if (numbersArr[i] > maxNumber) {
+        maxNumber = numbersArr[i];
+    }
+}
+console.log(maxNumber);
+
+////2.7.6
+// Дан массив с числами. После каждого однозначного числа вставьте еще такое же.
+let numbers3 = [1, 2, 3, 4, 77, 5, 6];
+let newArray = [];
+
+for (let i = 0; i < numbers.length; i++) {
+    newArray.push(numbers[i]);
+
+    if (numbers[i] >= 0 && numbers[i] <= 9) {
+        newArray.push(numbers[i]);
+    }
+}
+
+console.log(newArray);
+
+////2.7.7
+// Дана строка. Удалите из нее все гласные буквы.
+let str13 = "привет, мир!";
+let result = "";
+
+for (let i = 0; i < str13.length; i++) {
+    if ("аеёиоуыэюяАЕЁИОУЫЭЮЯ".indexOf(str13[i]) === -1) {
+        result += str13[i];
+    }
+}
+
+console.log(result);
+
+////2.7.8
+// Дана строка. Сделайте заглавной последнюю букву каждого слова в этой строке.
+let str14 = "пример строки для теста";
+let words1 = str14.split(" ");
+
+for (let i = 0; i < words1.length; i++) {
+
+    if (words1[i].length > 0) {
+        let lastLetter = words1[i][(words1[i].length - 1)];
+        let upperLastLetter = lastLetter.toUpperCase();
+        words1[i] = words1[i].slice(0, -1) + upperLastLetter;
+    }
+}
+
+let result1 = words1.join(" ");
+
+console.log(result1);
+
+
+////2.7.9
+// Дан следующая структура:
+// let data = [
+// 	{
+// 		1: [1, 2, 3],
+// 		2: [1, 2, 3],
+// 		3: [1, 2, 3],
+// 	},
+// 	{
+// 		1: [1, 2, 3],
+// 		2: [1, 2, 3],
+// 		3: [1, 2, 3],
+// 	},
+// 	{
+// 		1: [1, 2, 3],
+// 		2: [1, 2, 3],
+// 		3: [1, 2, 3],
+// 	},
+// ];
+// Найдите сумму элементов этой структуры.
+let data = [{
+        1: [1, 2, 3],
+        2: [1, 2, 3],
+        3: [1, 2, 3],
+    },
+    {
+        1: [1, 2, 3],
+        2: [1, 2, 3],
+        3: [1, 2, 3],
+    },
+    {
+        1: [1, 2, 3],
+        2: [1, 2, 3],
+        3: [1, 2, 3],
+    },
+];
+
+let sum2 = 0;
+
+for (let i = 0; i < data.length; i++) {
+    let obj = data[i];
+    for (let key in obj) {
+        let arr = obj[key];
+        for (let j = 0; j < arr.length; j++) {
+            sum2 += arr[j];
+        }
+    }
+}
+
+console.log(sum2);
+
+
+//3.8.1
+// Дан массив со числами. Проверьте, что все числа из этого массива содержат в себе цифру 3.
+
+// №2
+// Дана строка в формате:
+
+// 'kebab-case'
+// Преобразуйте ее в формат:
+
+// 'snake_case'
+let kebabCaseString = 'kebab-case';
+
+let words5 = kebabCaseString.split('-');
+let snakeCaseString = words5.join('_');
+
+console.log(snakeCaseString); // Выведет 'snake_case'
+
+
+
+// №3
+
+// Дана строка в формате:
+
+// 'snake_case'
+// Преобразуйте ее в формат:
+
+// 'camelCase'
+let snakeCaseString1 = 'snake_case';
+let words2 = snakeCaseString1.split('_');
+
+for (let i = 1; i < words2.length; i++) {
+    words2[i] = words2[i][0].toUpperCase() + words2[i].substring(1);
+}
+
+let camelCaseString1 = words2.join('');
+
+console.log(camelCaseString1);
+
+
+// №4
+
+// Дана строка в формате:
+
+// 'camelCase'
+// Преобразуйте ее в формат:
+
+// 'snake_case'
+
+let camelCaseString = 'camelCase';
+let snakeCaseString2 = '';
+
+for (let i = 0; i < camelCaseString.length; i++) {
+    let char = camelCaseString[i];
+    if (char === char.toUpperCase()) {
+        if (i !== 0) {
+            snakeCaseString2 += '_';
+        }
+        snakeCaseString2 += char.toLowerCase();
+    } else {
+        snakeCaseString2 += char;
+    }
+}
+
+console.log(snakeCaseString2);
+
+
+// №5
+
+// Сформируйте с помощью циклов следующий массив:
+
+// [
+// 	[1, 2, 3],
+// 	[1, 2, 3],
+// 	[1, 2, 3],
+// 	[1, 2, 3],
+// 	[1, 2, 3],
+// ]
+let numRows = 5;
+let numCols = 3;
+let result2 = [];
+
+for (let i = 0; i < numRows; i++) {
+    let row = [];
+    for (let j = 0; j < numCols; j++) {
+        row.push(j + 1);
+    }
+    result2.push(row);
+}
+
+console.log(result2);
+
+
+//№1
+
+// Дана строка. Проверьте, что эта строка состоит только из цифр.
+
+// №2
+
+// Дана строка. Проверьте, что эта строка состоит только из четных цифр.
+
+// №3
+
+// Дан массив со числами. Удалите из него числа, имеющие два и более нуля.
+
+// №4
+
+// Найдите все числа от 1 до 1000, сумма цифр которых равна 13.
+
+// №5
+
+// Сформируйте с помощью циклов следующий массив:
+
+// [
+// 	[1, 2, 3],
+// 	[4, 5, 6],
+// 	[7, 8, 9],
+// ]
