@@ -953,6 +953,20 @@ console.log(result2);
 //№1
 
 // Дана строка. Проверьте, что эта строка состоит только из цифр.
+function exa_391(str) {
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] < '0' || str[i] > '9') {
+            return false;
+        }
+    }
+    return true;
+}
+
+let str6 = "12345"; // Строка состоит только из цифр
+let str2 = "123abc"; // Строка содержит символы, отличные от цифр
+
+console.log(exa_391(str16)); // Выведет true
+console.log(exa_391(str2)); // Выведет false
 
 // №2
 
