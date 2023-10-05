@@ -78,7 +78,9 @@ let variable_1 = 'строка с позицией 0';
 let position1 = variable_1.indexOf('0');
 if (position1 >= 0) {
     console.log('позиция 0 - ' + position1);
-} else { console.log('нуля нет'); }
+} else {
+    console.log('нуля нет');
+}
 
 
 //Выведите в консоль все числа в промежутке от 1 до 1000, сумма первой и второй цифры которых равна пяти.
@@ -145,7 +147,9 @@ console.log(array9);
 let str_0 = prompt('введите строку');
 if (str_0.length >= 2) {
     alert('строка после удаления предпоследнего символа - ' + str_0.slice(0, -2) + str_0.slice(-1));
-} else { alert('строка пуста'); }
+} else {
+    alert('строка пуста');
+}
 
 //Дан некоторый массив, например, вот такой: [1, 2, 3, 4, 5, 6]
 // Поделите сумму первой половины элементов этого массива на сумму второй половины элементов.
@@ -454,6 +458,7 @@ function exa_271() {
     let resStr = words.join(' ');
     return resStr;
 }
+
 exa_271();
 
 
@@ -461,7 +466,9 @@ exa_271();
 function exa_272(k) {
     if (k === k.toUpperCase()) {
         return console.log('буква в верхнем');
-    } else { console.log('буква в нижнем регистре'); }
+    } else {
+        console.log('буква в нижнем регистре');
+    }
 }
 
 
@@ -827,10 +834,10 @@ console.log(result1);
 // ];
 // Найдите сумму элементов этой структуры.
 let data = [{
-        1: [1, 2, 3],
-        2: [1, 2, 3],
-        3: [1, 2, 3],
-    },
+    1: [1, 2, 3],
+    2: [1, 2, 3],
+    3: [1, 2, 3],
+},
     {
         1: [1, 2, 3],
         2: [1, 2, 3],
@@ -874,7 +881,6 @@ let words5 = kebabCaseString.split('-');
 let snakeCaseString = words5.join('_');
 
 console.log(snakeCaseString); // Выведет 'snake_case'
-
 
 
 // №3
@@ -965,7 +971,7 @@ function exa_391(str) {
 let str6 = "12345"; // Строка состоит только из цифр
 let str2 = "123abc"; // Строка содержит символы, отличные от цифр
 
-console.log(exa_391(str16)); // Выведет true
+console.log(exa_391(str6)); // Выведет true
 console.log(exa_391(str2)); // Выведет false
 
 // №2
@@ -989,3 +995,537 @@ console.log(exa_391(str2)); // Выведет false
 // 	[4, 5, 6],
 // 	[7, 8, 9],
 // ]
+
+
+//4.1.1
+function getDayOfWeek(date) {
+    const daysOfWeek1 = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
+    const dayIndex = date.getDay();
+
+    return daysOfWeek1[dayIndex];
+}
+
+const inputDate1 = new Date('2023-10-05');
+const dayOfWeek1 = getDayOfWeek(inputDate1);
+console.log(`День недели для ${inputDate1.toLocaleDateString()}: ${dayOfWeek1}`);
+
+
+//.2
+//Сделайте функцию, которая параметром будет
+//получать дату, а возвращать день недели словом, соответствующий этой дате.
+function getDayOfWeekFromDate(date) {
+    const daysOfWeek = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
+    const dayIndex = date.getDay();
+
+    return daysOfWeek[dayIndex];
+}
+
+const inputDate = new Date('2023-10-05');
+const dayOfWeek = getDayOfWeekFromDate(inputDate);
+console.log(`день недели для ${inputDate.toLocaleDateString()}: ${dayOfWeek}`);
+
+
+//.3
+// Сделайте функцию, которая параметром будет принимать секунды, а возвращать количество суток, соответствующих этим секундам
+function secondsToDays(seconds) {
+    const secondsInDay = 60 * 60 * 24;
+    const days = seconds / secondsInDay;
+
+    return Math.floor(days);
+}
+
+const totalSeconds = 172800;
+const days = secondsToDays(totalSeconds);
+console.log(`${totalSeconds} секунд - это приближенно ${days} суток.`);
+
+
+//.4
+//Сделайте функцию, которая параметром будет принимать число и строку и обрезать эту строку до длины, заданной первым параметром.
+function numberString(number, str) {
+    if (str.length <= number) {
+        return str;
+    }
+    return str.slice(0, number);
+}
+
+numberString(2, 'это пробная строка');
+
+
+//.5
+// Сделайте функцию, которая параметром будет получать дату, а возвращать знак зодиака, соответствующий этой дате.
+function getZodiacSign(date) {
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+
+    const zodiacSigns = [
+        {name: "козерог", startMonth: 1, startDay: 20, endMonth: 2, endDay: 18},
+        {name: "водолей", startMonth: 2, startDay: 19, endMonth: 3, endDay: 20},
+        {name: "рыбы", startMonth: 3, startDay: 21, endMonth: 4, endDay: 19},
+        {name: "овен", startMonth: 4, startDay: 20, endMonth: 5, endDay: 20},
+        {name: "телец", startMonth: 5, startDay: 21, endMonth: 6, endDay: 20},
+        {name: "близнецы", startMonth: 6, startDay: 21, endMonth: 7, endDay: 22},
+        {name: "рак", startMonth: 7, startDay: 23, endMonth: 8, endDay: 22},
+        {name: "лев", startMonth: 8, startDay: 23, endMonth: 9, endDay: 22},
+        {name: "дева", startMonth: 9, startDay: 23, endMonth: 10, endDay: 22},
+        {name: "весы", startMonth: 10, startDay: 23, endMonth: 11, endDay: 21},
+        {name: "скорпион", startMonth: 11, startDay: 22, endMonth: 12, endDay: 21},
+        {name: "стрелец", startMonth: 12, startDay: 22, endMonth: 1, endDay: 19},
+    ];
+
+    for (const sign of zodiacSigns) {
+        if ((month === sign.startMonth && day >= sign.startDay) || (month === sign.endMonth && day <= sign.endDay)) {
+            return sign.name;
+        }
+    }
+
+    return 'рыбы';
+}
+
+const inputDate0 = new Date('2023-06-15');
+const zodiacSign = getZodiacSign(inputDate0);
+console.log(`знак зодиака для ${inputDate0.toLocaleDateString()}: ${zodiacSign}`);
+
+
+//.6
+// Сделайте функцию, которая параметром будет принимать число, а возвращать сумму его делителей.
+function sumDivader(number) {
+    let sum = 0;
+    for (let i = 1; i <= number; i++) {
+        if (number % i === 0) {
+            sum += i;
+        }
+    }
+    return sum;
+}
+
+let inputNumber = 4;
+let res1 = sumDivader(4);
+console.log(`сумма делителей числа ${inputNumber}: ${res1}`);
+
+
+//4.2.1
+//Сделайте функцию, которая параметром будет принимать число и возвращать сумму его цифр.
+function sumNumber(number) {
+    let sum = 0;
+    while (number > 0) {
+        sum += number % 10;
+        number = Math.floor(number / 10);
+    }
+    return sum;
+}
+
+sumNumber(89);
+
+
+//.2
+// Сделайте функцию, которая параметром будет принимать число и удалять из него нули.
+function removeZeros(number) {
+    let result = 0;
+
+    let multiplier = 1;
+
+    while (number > 0) {
+        let digit = number % 10;
+
+        if (digit !== 0) {
+            result += digit * multiplier;
+            multiplier *= 10;
+        }
+
+        number = Math.floor(number / 10);
+    }
+
+    return result;
+}
+
+removeZeros(1200684);
+
+
+//.3
+// Сделайте функцию, которая будет возвращать сколько дней прошло или осталось до заданной даты в году, в
+// зависимости от того, была уже эта дата или нет.
+
+
+//.4
+//Сделайте функцию, которая параметром будет год и проверять, високосный он или нет.
+function leapYear(year) {
+    return (year % 4 === 0);
+}
+
+let checkYear = 2024;
+let res7 = leapYear(checkYear);
+if (res7) {
+    console.log('год високосный');
+} else {
+    console.log('не високосный');
+}
+
+//.5
+//Сделайте функцию, которая вернет массив всех високосных годов за предыдущие сто лет.
+function arrayYear() {
+    let nowYear = new Date().getFullYear()
+    let array = [];
+    for (let year = nowYear - 1; year >= nowYear - 100; year--) {
+        if (year % 4 === 0) {
+            array.push(year);
+        }
+    }
+    return array;
+}
+
+arrayYear();
+
+
+//.6
+//Сделайте функцию, которая будет возвращать сколько дней осталось до конца текущего месяца.
+function days() {
+    let nowDate = new Date();
+    let nowMonth = nowDate.getMonth();
+    let nowYear = nowDate.getFullYear();
+    let lastDayOfMonth = new Date(nowYear, nowMonth + 1, 0).getDate();
+
+    let daysLeft = lastDayOfMonth - nowDate.getDate();
+
+    return daysLeft;
+}
+
+days();
+
+
+//.7
+// Сделайте функцию, которая вернет предыдущий, текущий и следующий дни недели словом в виде следующего объекта:
+// {
+//     next: 'пн',
+//         curr: 'вс',
+//     prev: 'сб',
+// }
+function getPrevNowNextDaysOfWeek() {
+    let daysOfWeek = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+    let nowDate = new Date();
+    let nowDayOfWeek = nowDate.getDay();
+
+
+    let previousDayOfWeek = nowDayOfWeek === 0 ? 6 : nowDayOfWeek - 1;
+    let nextDayOfWeek = nowDayOfWeek === 6 ? 0 : nowDayOfWeek + 1;
+
+
+    let prevDay = daysOfWeek[previousDayOfWeek];
+    let nowDay = daysOfWeek[nowDayOfWeek];
+    let nextDay = daysOfWeek[nextDayOfWeek];
+
+    return {
+        prev: prevDay,
+        now: nowDay,
+        next: nextDay,
+    };
+}
+
+getPrevNowNextDaysOfWeek();
+
+
+//4.3.1
+//Сделайте функцию, которая параметром будет принимать массив и удалять из него все дубли.
+function notDoubles(array) {
+    let newArray = [];
+    for(i=0; i < array.length; i++){
+        if(newArray.indexOf(array[i]) === -1){
+            newArray.push(array[i]);
+        }
+    }
+    return newArray;
+}
+let array0 = [1,1,3,4,4,5,5,3,2,3];
+notDoubles(array0);
+
+
+//.3
+//Сделайте функцию, которая параметром будет принимать массив и удалять из него одинаковые, рядом стоящие элементы.
+function notDoubles0(array) {
+    let newArray = [];
+    let count = 3;
+    for(i=0; i < array.length; i++){
+        if(newArray.indexOf(array[i]) === -1 || array[i] <= count ){
+            newArray.push(array[i]);
+        }
+    }
+    return newArray;
+}
+let array_0 = [1,1,3,4,4,5,5,5,5,3,2,3];
+notDoubles0(array_0);
+
+
+//.4
+//Сделайте функцию, которая параметром будет принимать массив с числами и возвращать
+// максимальное и минимальное значение из этого массива в виде следующего объекта:
+//
+// {
+// 	max: 9,
+// 	min: 1,
+// }
+function maxMin(array) {
+    let max = array[0];
+    let min = array[0];
+    for(i = 0; i < array.length; i++){
+        if(array[i]> max){
+            max = array[i];
+        }
+        if (array[i]< min){
+            min = array[i];
+        }
+    }
+    return {
+        min: min,
+        max: max,
+    };
+}
+let array_1 = [1,3,4,6,78,8,1];
+maxMin(array_1);
+
+
+//4.4.1
+//Сделайте функцию, которая параметром будет принимать число, а количество его делителей.
+function numberDivisors(number) {
+    let count = 0;
+    for( i = 0; i <= number; i++){
+        if(number% i === 0){
+            count ++;
+        }
+    }
+    return count;
+}
+numberDivisors(2);
+
+
+//.2
+//Сделайте функцию, которая параметром будет принимать дату, а возвращать знак зодиака, соответствующий этой дате.
+//= 4.1.5
+
+
+//.3
+//Сделайте функцию, которая параметром будет принимать число, а возвращать массив его делителей.
+function numberDivisorsArray(number) {
+    let array = [];
+    for( i = 0; i <= number; i++){
+        if(number% i === 0){
+            array.push(i);
+        }
+    }
+    return array;
+}
+
+numberDivisorsArray(4);
+
+
+//.4
+//Сделайте функцию, которая параметром будет принимать число и проверять, простое оно или нет.
+function numberDivisors_1(number) {
+    let countDivisors = 0;
+    for( i = 1; i <= number; i++){
+        if(number % i === 0){
+            countDivisors++;
+        }
+    }
+    if(countDivisors > 2){
+        console.log('число не простое');
+    } else { console.log('число простое');}
+}
+numberDivisors_1(18)
+
+
+//.5
+//Сделайте функцию, которая параметром будет принимать число и удалять из него четные цифры.
+function deliteNumbers(number) {
+    let result_0 = 0;
+    let multiplayer_0 = 1;
+    while(number > 0 ){
+        let digit_0 = number % 10;
+        if(digit_0 % 2 !== 0){
+            result_0 += digit_0 *multiplayer_0;
+            multiplayer_0 *= 10;
+        }
+        number = Math.floor(number/ 10);
+    }
+    return result_0;
+}
+deliteNumbers(134)
+
+
+//.6
+//Сделайте функцию, которая заполнит массив N случайными числами из заданного промежутка.
+function fillArrayWithRandomNumbers(length, min, max) {
+    let result_1 = [];
+
+    for (let i = 0; i < length; i++) {
+        let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+        result_1.push(randomNumber);
+    }
+
+    return result_1;
+}
+
+fillArrayWithRandomNumbers(10, 1, 100);
+
+
+//4.5.1
+//Дана переменная со строкой. Проверьте, что в эта строка представляет собой число, то есть состоит только из цифр.
+function isStringNumeric(str) {
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] < '0' || str[i] > '9') {
+            return false;
+        }
+    }
+    return true;
+}
+
+let someString = "12345";
+let anotherString = "abc123";
+
+console.log(isStringNumeric(someString));
+console.log(isStringNumeric(anotherString));
+
+
+//.2
+//Дана переменная со строкой. Проверьте, что в эта строка представляет собой дробь.
+
+
+//.3
+// Сделайте функцию, которая параметром будет принимать массив с числами и возвращать второе по величине число.
+function findSecondLargest(arr) {
+    if (arr.length < 2) {
+        return undefined;
+    }
+
+    let largest = arr[0];
+    let secondLargest = arr[1];
+
+    if (secondLargest > largest) {
+        [largest, secondLargest] = [secondLargest, largest];
+    }
+
+    for (let i = 2; i < arr.length; i++) {
+        if (arr[i] > largest) {
+            secondLargest = largest;
+            largest = arr[i];
+        } else if (arr[i] > secondLargest && arr[i] !== largest) {
+            secondLargest = arr[i];
+        }
+    }
+
+    return secondLargest;
+}
+
+const numbers_0 = [4, 8, 2, 10, 6];
+
+findSecondLargest(numbers_0);
+
+
+// .4
+// Сделайте функцию, которая параметрами будет принимать два числа и возвращать массив,
+// заполненный целыми числами от минимального параметра до максимальног..
+function generateRange(min, max) {
+    if (min > max) {
+        return [];
+    }
+
+    const result = [];
+    for (let i = min; i <= max; i++) {
+        result.push(i);
+    }
+    return result;
+}
+
+generateRange(8, 18);
+
+// .5
+// Сделайте функцию, которая заполнит массив случайными латинскими буквам..
+
+
+// .6
+// Сделайте функцию, которая будет возвращать сумму N первых чисел Фибоначчи.
+function sumFibonacciNumbers(N) {
+    if (N <= 0) {
+        return 0;
+    }
+
+    let prev = 0;
+    let current = 1;
+    let sum = 0;
+
+    for (let i = 1; i <= N; i++) {
+        sum += current;
+        const next = prev + current;
+        prev = current;
+        current = next;
+    }
+
+    return sum;
+}
+sumFibonacciNumbers(5);
+
+
+
+//4.6.1
+// Сделайте функцию, которая параметром будет принимать дату в формате год-месяц-день, и определять, существует ли такая дата или нет.
+
+// №2
+// Сделайте функцию, которая сгенерирует строку заданной длины, заполненную случайными латинскими буквами.
+
+// №3
+// Сделайте функцию, которая параметром будет получать строку со словами, а возвращать строку в верхнем регистре, состоящую из первых букв слов.
+
+// №4
+// Сделайте функцию, которая параметром будет принимать массив с числами и заменять каждое число на массив его делителей.
+function findDivisors(arr) {
+    const result = [];
+    for (const num of arr) {
+        const divisors = [];
+        for (let i = 1; i <= num; i++) {
+            if (num % i === 0) {
+                divisors.push(i);
+            }
+        }
+        result.push(divisors);
+    }
+    return result;
+}
+
+findDivisors([10, 15, 20]);
+
+
+// №5
+// Сделайте функцию, которая параметром будет принимать секунды, а возвращать количество дней, часов, минут и секунд, соответствующих этим секундам, в виде следующего объекта:
+// {
+// 	d: 12,
+// 	h: 10,
+// 	m: 59,
+// 	s: 59,
+// }
+
+function secondsToTime(seconds) {
+    const days = Math.floor(seconds / 86400);
+    seconds -= days * 86400;
+    const hours = Math.floor(seconds / 3600);
+    seconds -= hours * 3600;
+    const minutes = Math.floor(seconds / 60);
+    seconds -= minutes * 60;
+
+    return {
+        d: days,
+        h: hours,
+        m: minutes,
+        s: seconds,
+    };
+}
+secondsToTime(126599);
+
+
+
+//function sortStr(str) {
+//     let strNew = str.split(' ');
+//     strNew.sort((a,b) => a-b)
+//     let resStr_0 = strNew.join(' ');
+//     return resStr_0;
+//
+// }
+// sortStr('привет, ало');
+
