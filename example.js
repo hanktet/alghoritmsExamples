@@ -1,3 +1,21 @@
+//1.8.1
+//Заполните массив целыми числами от 1 до 10.
+let mas = [];
+for (i = 1; i <= 100; i++) {
+    mas.push(i);
+}
+console.log(mas);
+
+
+//2
+//Заполните массив четными числами из промежутка от 1 до 100.
+let mas_9 = [];
+for (i = 2; i <= 100; i += 2) {
+    mas.push(i);
+}
+console.log(mas_9);
+
+//3
 // Дан массив с дробями: [1.456, 2.125, 3.32, 4.1, 5.34]
 // Округлите эти дроби до одного знака в дробной части.
 let array = [1.456, 2.125, 3.32, 4.1, 5.34];
@@ -7,7 +25,7 @@ for (let i = 0; i < array.length; i++) {
 }
 console.log(arraySort);
 
-
+//1.9.1
 //Дан массив со строками. Оставьте в этом массиве только те строки, которые начинаются на http://
 let array1 = ["http://examples", "http://hi", "ftp:// hi"];
 let sortArray = [];
@@ -18,7 +36,7 @@ for (let i = 0; i < array1.length; i++) {
 }
 console.log(sortArray);
 
-
+//2
 //Дан массив со строками. Оставьте в этом массиве только те строки, которые заканчиваются на .html
 let array2 = ["http://examples", "http://hi", "ftp:// hi", "way.html"];
 for (let i = array2.length - 1; i >= 0; i--) {
@@ -28,7 +46,7 @@ for (let i = array2.length - 1; i >= 0; i--) {
 }
 console.log(array2);
 
-
+//3
 //Дан массив с числами. Увеличьте каждое число из массива на 10 процентов.
 let array3 = [10, 20, 30, 40, 54];
 for (let i = 0; i < array3.length; i++) {
@@ -36,7 +54,7 @@ for (let i = 0; i < array3.length; i++) {
 }
 console.log(array3);
 
-
+//1.10.1.
 //Заполните массив случайными числами из промежутка от 1 до 100.
 let array4 = [];
 let count1 = Math.random() * 10;
@@ -45,7 +63,7 @@ for (let i = 0; i < count1; i++) {
 }
 console.log(array4);
 
-
+//2
 //Дано некоторое число: 12345. Выведите в консоль все его символы с конца.
 let variable = 12345;
 let stringVaruable = variable.toString();
@@ -53,7 +71,7 @@ for (let i = stringVaruable.length - 1; i >= 0; i--) {
     console.log(stringVaruable[i]);
 }
 
-
+//3
 //Дан некоторый массив, например, вот такой: [1, 2, 3, 4, 5, 6]
 // По очереди выведите в консоль подмассивы из двух элементов нашего массива:
 let array5 = [1, 2, 3, 4, 5, 6];
@@ -62,7 +80,7 @@ for (let i = 0; i < array5.length; i += 2) {
     console.log(sortarray);
 }
 
-
+//4
 //Даны два массива:
 // let arr1 = [1, 2, 3];
 // let arr2 = [4, 5, 6];
@@ -73,6 +91,7 @@ let arr = arr1.concat(arr2);
 console.log(arr);
 
 
+//2.1.1
 //Дана некоторая строка. Найдите позицию первого нуля в строке.
 let variable_1 = 'строка с позицией 0';
 let position1 = variable_1.indexOf('0');
@@ -83,6 +102,7 @@ if (position1 >= 0) {
 }
 
 
+//2
 //Выведите в консоль все числа в промежутке от 1 до 1000, сумма первой и второй цифры которых равна пяти.
 for (let number = 1; number <= 1000; number++) {
     const numberStr = number.toString(); // Преобразуем число в строку
@@ -97,6 +117,8 @@ for (let number = 1; number <= 1000; number++) {
 }
 
 
+
+//3
 //Дан массив. Удалите из него элементы с заданным значением.
 let arra6 = [1, 2, 3, 4, 5, 3, 6];
 let valueToRemove = 3;
@@ -108,6 +130,7 @@ for (let i = array6.length - 1; i >= 0; i--) {
 console.log(array6);
 
 
+//4
 //Дан некоторый массив, например, вот такой: [1, 2, 3, 4, 5, 6]
 // Найдите сумму первой половины элементов этого массива.
 let array7 = [1, 2, 3, 4, 5, 6];
@@ -119,6 +142,7 @@ for (let i = 0; i < middleIndex1; i++) {
 console.log("сумма первой половины элементов массива:" + sum1);
 
 
+//2.2.1
 //Дан массив с числами. Подсчитайте количество отрицательных чисел в этом массиве.
 const array8 = [1, -2, 3, -4, 5, -6];
 let count = 0;
@@ -129,7 +153,7 @@ for (let i = 0; i < array8.length; i++) {
 }
 console.log("количество отрицательных чисел в массиве:" + count);
 
-
+//2
 //Дан массив с числами. Оставьте в нем только положительные числа.
 let array9 = [1, -2, 3, -4, 5, -6];
 let i = 0;
@@ -143,6 +167,7 @@ while (i < array9.length) {
 console.log(array9);
 
 
+//3
 //Дана строка. Удалите предпоследний символ из этой строки.
 let str_0 = prompt('введите строку');
 if (str_0.length >= 2) {
@@ -151,6 +176,8 @@ if (str_0.length >= 2) {
     alert('строка пуста');
 }
 
+
+//4
 //Дан некоторый массив, например, вот такой: [1, 2, 3, 4, 5, 6]
 // Поделите сумму первой половины элементов этого массива на сумму второй половины элементов.
 let array10 = [1, 2, 3, 4, 5, 6];
@@ -176,6 +203,8 @@ if (sumSecondHalf !== 0) {
 }
 
 
+
+//2.3.1
 //Даны два слова. Проверьте, что последняя буква первого слова совпадает с первой буквой второго слова.
 let word1 = prompt("введите первое слово");
 let word2 = prompt("введите второе слово");
@@ -190,6 +219,7 @@ if (lastLetterWord1 === firstLetterWord2) {
 }
 
 
+//2
 //Дана некоторая строка. Найдите позицию третьего нуля в строке.
 let str = "012304050600";
 let position2 = -1;
@@ -207,6 +237,8 @@ if (position2 !== -1) {
     console.log("третий ноль не найден в строке.");
 }
 
+
+//3
 //Даны числа, разделенные запятыми: '12,34,56'
 // Найдите сумму этих чисел.
 let numbersString = '12,34,56';
@@ -217,6 +249,8 @@ for (let i = 0; i < numbersArray.length; i++) {
 }
 console.log("сумма чисел:" + sum);
 
+
+//4
 //Дана дата в следующем формате: '2025-12-31'
 // Преобразуйте эту дату в следующий объект:
 // {
@@ -234,6 +268,7 @@ let dateObject = {
 console.log(dateObject);
 
 
+//2.4.1
 //Дана некоторая строка с буквами и цифрами. Получите позицию первой цифры в этой строке.
 let str1 = 'abc123def';
 let position = -1;
@@ -251,7 +286,7 @@ if (position !== -1) {
     console.log("цифры не найдены в строке.");
 }
 
-
+//2
 // Дан объект с ключами и значениями. Запишите в первый массив ключи объекта, а во второй - значения.
 let obj = {
     key1: 'value1',
@@ -269,7 +304,7 @@ for (let key in obj) {
 console.log("массив ключей:", keysArray);
 console.log("массив значений:", valuesArray);
 
-
+//3
 // Дано число. Выведите в консоль количество четных цифр в этом числе.
 let number = 1234567890;
 let numberStr = number.toString();
@@ -282,7 +317,7 @@ for (let i = 0; i < numberStr.length; i++) {
 }
 console.log("количество четных цифр:", evenCount);
 
-
+//4
 // Дана некоторая строка: 'abcde'
 // Переведите в верхний регистр все нечетные буквы этой строки. В нашем случае должно получится следующее: 'AbCdE'
 let inputString1 = 'abcde';
@@ -299,6 +334,8 @@ for (let i = 0; i < inputString1.length; i++) {
 
 console.log(resultString1);
 
+
+//5
 // Дана некоторая строка со словами: 'aaa bbb ccc'
 // Сделайте заглавным первый символ каждого слова в этой строке. В нашем случае должно получится следующее: 'Aaa Bbb Ccc'
 let inputString = 'aaa bbb ccc';
@@ -317,7 +354,7 @@ for (let i = 0; i < words.length; i++) {
 
 console.log(resultString);
 
-
+//2.5.1
 //Дана некоторая строка, например, вот такая: '023m0df0dfg0'
 // Получите массив позиций всех нулей в этой в строке.
 let srt2 = '023m0df0dfg0';
@@ -331,7 +368,7 @@ for (let i = 0; i < srt2.length; i++) {
 
 console.log(zeroPositions);
 
-
+//2
 //Дана некоторая строка: 'abcdefg'
 // Удалите из этой строки каждый третий символ. В нашем случае должно получится следующее: 'abdeg'
 let str3 = 'abcdefg';
@@ -343,6 +380,8 @@ for (let i = 0; i < srt3.length; i++) {
 }
 console.log(finalStr);
 
+
+//3
 // Дан некоторый массив, например, вот такой: [1, 2, 3, 4, 5, 6]
 // Поделите сумму элементов, стоящих на четных позициях, на сумму элементов, стоящих на нечетных позициях.
 let array11 = [1, 2, 3, 4, 5, 6];
@@ -364,6 +403,7 @@ if (sumOdd !== 0) {
 }
 
 
+//2.6.1
 //Дана некоторая строка с буквами и цифрами. Получите массив позиций всех цифр из этой строки.
 let str4 = 'abc123def456';
 let digitPositions = [];
@@ -376,7 +416,7 @@ for (let i = 0; i < str4.length; i++) {
 }
 console.log(digitPositions);
 
-
+//2
 // Дан массив с некоторыми числами, например, вот такой: [123, 456, 789]
 // Напишите код, который перевернет числа в этом массиве по следующему принципу: [321, 654, 987]
 let numbers = [123, 456, 789];
@@ -387,9 +427,10 @@ let reversedNumbers = numbers.map(number => {
 
 console.log(reversedNumbers);
 
+
+//3
 // Дана некоторая строка с числом: '1234567'
 // Отделите тройки цифр пробелами, начиная с конца числа. В нашем случае должно получится следующее: '1 234 567'
-
 let str5 = '1234567';
 let formattedString = '';
 
@@ -407,7 +448,7 @@ for (let i = str5.length; i > 0; i -= 3) {
 
 console.log(formattedString);
 
-
+//4
 // Дана некоторая строка: 'AbCdE'
 // Смените регистр букв этой строки на противоположный. В нашем случае должно получится следующее: 'aBcDe'
 let str12 = 'AbCdE';
@@ -421,7 +462,7 @@ for (i = 0; i < str12.length; i++) {
 }
 console.log(res);
 
-
+//5
 // Дан некоторый массив с числами, например, вот такой: [1, 2, 3, 4, 5, 6]
 // Слейте пары элементов вместе: [12, 34, 56]
 let array13 = [1, 2, 3, 4, 5, 6];
@@ -431,7 +472,7 @@ for (i = 0; i < array13.length; i += 2) {
 }
 console.log(arraySort1);
 
-
+//6
 // Дана некоторая строка со словами:'aaa bbb ccc eee fff'
 // Сделайте заглавным первый символ каждого второго слова в этой строке. В нашем случае должно получится следующее: 'aaa Bbb ccc Eee fff'
 function exs_266() {
@@ -445,6 +486,7 @@ function exs_266() {
 }
 
 
+//2.7.1
 //Дана некоторая строка:'a bc def ghij'
 // Переведите в верхний регистр все подстроки, в которых количество букв меньше или равно трем. В нашем случае должно получится следующее: 'A BC DEF ghij'
 function exa_271() {
@@ -461,7 +503,7 @@ function exa_271() {
 
 exa_271();
 
-
+//2
 //Дан символ. Узнайте, в каком регистре этот символ - в верхнем или нижнем.
 function exa_272(k) {
     if (k === k.toUpperCase()) {
@@ -471,7 +513,7 @@ function exa_272(k) {
     }
 }
 
-
+//3
 //Дано некоторое число, например, такое: 123789
 // Удалите из этого числа все нечетные цифры. В нашем случае получится такой результат: 28
 function exa_273() {
@@ -489,7 +531,7 @@ function exa_273() {
     return result;
 }
 
-
+//2.8.1
 //Дана строка с буквами. Проверьте, что в этой строке не более двух заглавных букв.
 function exa_281() {
     let word = 'kerERhKr';
@@ -506,6 +548,7 @@ function exa_281() {
 }
 
 
+//2
 //Дана некоторая строка: '1 22 333 4444 22 5555 1'
 // Удалите из этой строки все подстроки, в которых количество символов больше трех. 
 // В нашем случае должно получится следующее: '1 22 333 22 1'
@@ -523,6 +566,7 @@ function exa_282() {
 }
 
 
+//3
 // Даны два массива:
 // let arr1 = [1, 2, 3];
 // let arr2 = ['a', 'b', 'c'];
@@ -538,6 +582,7 @@ function exa_283() {
 }
 
 
+//2.9.1
 //Дано некоторое число: 123456
 // Найдите сумму пар цифр этого числа. В нашем случае имеется ввиду следующее: 12 + 34 + 56
 function exa_291() {
@@ -554,6 +599,7 @@ function exa_291() {
 }
 
 
+//2
 // Дан массив с числами: [1, 2, 3, 4, 5]
 // Выведите в консоль элементы этого массива в обратном порядке.
 function exa_292() {
@@ -565,6 +611,7 @@ function exa_292() {
 }
 
 
+//2.10.1
 // Дана строка с буквами и цифрами. Проверьте, что в этой строке не более трех букв.
 function exa_2101() {
     let str = "abdc123";
@@ -586,7 +633,7 @@ function exa_2101() {
     console.log("cтрока содержит не более трех букв.");
 }
 
-
+//2
 // Дано число. Получите первую четную цифру с конца этого числа.
 function exa_2102() {
     let number = 123456789;
@@ -609,7 +656,7 @@ function exa_2102() {
     }
 }
 
-
+//3
 // Дана некоторая строка: 'abcde abcde abcde'
 // Замените в ней первый символ каждого слова на '!': '!bcde !bcde !bcde'
 function exa_2103() {
@@ -629,6 +676,8 @@ function exa_2103() {
     return result;
 }
 
+
+//4
 // Дан массив с числами: [1, 2, 3, 3, 4, 5]
 // Проверьте, что в этом массиве есть два одинаковых элемента подряд.
 function exa_2104(params) {
@@ -650,6 +699,7 @@ function exa_2104(params) {
 }
 
 
+//3.1.1
 // Дано некоторое число. Проверьте, что цифры этого числа расположены по возрастанию.
 function exa31() {
 
@@ -675,6 +725,7 @@ function exa31() {
 }
 
 
+//2
 // Дан массив: [1, '', 2, 3, '', 5]
 // Удалите из массива все пустые строки.
 function exa_32() {
@@ -690,19 +741,121 @@ function exa_32() {
     console.log(newArr);
 }
 
+
+//3
 // Дан массив:
 // [
 // 	[2, 1, 4, 3, 5],
 // 	[3, 5, 2, 4, 1],
 // 	[4, 3, 1, 5, 2],
 // ]  Отсортируйте элементы в каждом подмассиве.
+const array_5 = [
+    [2, 1, 4, 3, 5],
+    [3, 5, 2, 4, 1],
+    [4, 3, 1, 5, 2]
+];
+
+function exa_313(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        arr[i].sort((a, b) => a - b);
+    }
+}
+
+exa_313(array_5);
 
 
+
+//4
 // Даны два массива:
 // let arr1 = [1, 2, 3];
 // let arr2 = [1, 2, 3, 4, 5];
 // Удалите из большего массива лишние элементы с конца так, чтобы длины массивов стали одинаковыми.
+function exa_314() {
+    let arr1 = [1, 2, 3];
+    let arr2 = [1, 2, 3, 4, 5];
 
+    if (arr1.length > arr2.length) {
+        arr1.splice(arr2.length);
+    } else if (arr2.length > arr1.length) {
+        arr2.splice(arr1.length);
+    }
+
+    console.log(arr1);
+    console.log(arr2);
+}
+
+
+//3.2.1
+// Выведите в консоль все числа в промежутке от 10 до 1000, у которых предпоследняя цифра четная.
+function exa_321() {
+
+    for (let i = 10; i <= 1000; i++) {
+        let secondToLastDigit = Math.floor((i % 100) / 10);
+        if (secondToLastDigit % 2 === 0) {
+            console.log(i);
+        }
+    }
+}
+
+
+// №2
+// Дан массив. Удалите из него каждый пятый элемент.
+function exa_322() {
+
+    let array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    let step = 5;
+    for (i = step - 1; i < array.length; i += step) {
+        array.splice(i, 1);
+        console.log(array);
+    }
+}
+
+
+// №3
+// Дана некоторая переменная с числом:
+// let num = 5;
+// Сделайте строку, содержащую столько нулей, сколько указано в переменной. В нашем случае получится такая строка:
+// '00000'
+let num_6 = 5;
+let str_6 = '';
+for (let i = 0; i < num_6; i++) {
+    str_6 += '0';
+}
+console.log(str_6);
+
+// №4
+// Дана некоторая строка со словами:
+// 'aaa bbb ccc eee fff'
+// Удалите из этой строки каждое второе слово. В нашем случае должно получится следующее:
+// 'aaa ccc fff'
+let str_7 = 'aaa bbb ccc eee fff';
+let strsort = str_7.split(' ');
+for (i = 1; i < strsort.length; i += 2) {
+    strsort[i] = strsort[i].slice(i, 1);
+}
+let resStr = strsort.join(' ');
+console.log(resStr);
+
+// №5
+// Дан массив:
+// [
+// 	[1, 2, 3],
+// 	[4, 5, 6],
+// 	[7, 8, 9],
+// ]
+// Найдите сумму элементов этого массива.
+let array_00 = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+]
+let sum_00 = 0;
+for (i = 0; i < array_00.length; i++) {
+    for (j = 0; j < array_00[i].length; j++) {
+        sum_00 += array_00[i][j];
+    }
+}
+console.log(sum_00);
 
 //2.7.2
 //Дано число. Получите массив делителей этого числа.
@@ -834,10 +987,10 @@ console.log(result1);
 // ];
 // Найдите сумму элементов этой структуры.
 let data = [{
-    1: [1, 2, 3],
-    2: [1, 2, 3],
-    3: [1, 2, 3],
-},
+        1: [1, 2, 3],
+        2: [1, 2, 3],
+        3: [1, 2, 3],
+    },
     {
         1: [1, 2, 3],
         2: [1, 2, 3],
@@ -956,8 +1109,7 @@ for (let i = 0; i < numRows; i++) {
 console.log(result2);
 
 
-//№1
-
+//3.9.1
 // Дана строка. Проверьте, что эта строка состоит только из цифр.
 function exa_391(str) {
     for (let i = 0; i < str.length; i++) {
@@ -977,25 +1129,153 @@ console.log(exa_391(str2)); // Выведет false
 // №2
 
 // Дана строка. Проверьте, что эта строка состоит только из четных цифр.
+let str11 = "2468";
+let str22 = "13579";
+let str33 = "135246";
+
+function isAllEvenDigits(str) {
+    for (let i = 0; i < str.length; i++) {
+        let digit = parseInt(str[i], 10);
+        if (digit % 2 !== 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+let isAllEvenDigits1 = isAllEvenDigits(str11);
+let isAllEvenDigits2 = isAllEvenDigits(str22);
+let isAllEvenDigits3 = isAllEvenDigits(str33);
+
+console.log(isAllEvenDigits1);
+console.log(isAllEvenDigits2);
+console.log(isAllEvenDigits3);
+
 
 // №3
-
 // Дан массив со числами. Удалите из него числа, имеющие два и более нуля.
+let numbers2 = [100, 200, 10, 2200, 5, 6000, 7];
+
+for (let i = 0; i < numbers2.length; i++) {
+    let num = numbers2[i];
+    let zeroCount = 0;
+
+
+    while (num > 0) {
+        if (num % 10 === 0) {
+            zeroCount++;
+        }
+        num = Math.floor(num / 10);
+    }
+
+
+    if (zeroCount >= 2) {
+        numbers2.splice(i, 1);
+        i--;
+    }
+}
+
+console.log(numbers2);
+
 
 // №4
-
 // Найдите все числа от 1 до 1000, сумма цифр которых равна 13.
+for (let num = 1; num <= 1000; num++) {
+    let currentNum = num;
+    let sumOfDigits = 0;
+
+    while (currentNum > 0) {
+        sumOfDigits += currentNum % 10;
+        currentNum = Math.floor(currentNum / 10);
+    }
+
+    if (sumOfDigits === 13) {
+        console.log(num);
+    }
+}
+
 
 // №5
-
 // Сформируйте с помощью циклов следующий массив:
-
 // [
 // 	[1, 2, 3],
 // 	[4, 5, 6],
 // 	[7, 8, 9],
 // ]
+let rows = 3;
+let cols = 3;
+let result4 = [];
 
+for (let i = 1; i <= rows; i++) {
+    let row = [];
+    for (let j = 1; j <= cols; j++) {
+        row.push(i * j);
+    }
+    result4.push(row);
+}
+
+console.log(result4);
+
+
+
+//3.10.1
+// Дан массив. Сделайте так, чтобы в нем каждый элемент повторился два раза.
+let arr_3 = [1, 2, 3, 4, 5];
+let newArr = [];
+
+for (let i = 0; i < arr_3.length; i++) {
+    newArr.push(arr[i], arr_3[i]);
+}
+
+console.log(newArr);
+
+// 2
+// Дан массив и число. Оставьте в массиве только те числа, которые являются делителями заданного числа.
+let numbers_9 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let divisor = 3;
+let result9 = [];
+
+for (let i = 0; i < numbers_9.length; i++) {
+    if (divisor % numbers_9[i] === 0) {
+        result_9.push(numbers_9[i]);
+    }
+}
+
+console.log(result_9);
+
+
+// №4
+// Дано число. Получите массив позицией всех цифр 3 в этом числе, за исключением первой и последней.
+
+
+// №5
+// Дан массив со числами. Оставьте в нем числа, состоящие из разных цифр, а остальные удалите.
+
+
+
+// №6
+// Дан массив:
+// [
+// 	[1, 2, 3],
+// 	[4, 5, 6],
+// 	[7, 8, 9],
+// ]
+// Слейте элементы этого массива в один одномерный массив:
+// [1, 2, 3, 4, 5, 6, 7, 8, 9]
+let matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+];
+
+let flatArray = [];
+for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+        flatArray.push(matrix[i][j]);
+    }
+}
+
+console.log(flatArray); -
 
 //4.1.1
 function getDayOfWeek(date) {
@@ -1058,18 +1338,18 @@ function getZodiacSign(date) {
     const day = date.getDate();
 
     const zodiacSigns = [
-        {name: "козерог", startMonth: 1, startDay: 20, endMonth: 2, endDay: 18},
-        {name: "водолей", startMonth: 2, startDay: 19, endMonth: 3, endDay: 20},
-        {name: "рыбы", startMonth: 3, startDay: 21, endMonth: 4, endDay: 19},
-        {name: "овен", startMonth: 4, startDay: 20, endMonth: 5, endDay: 20},
-        {name: "телец", startMonth: 5, startDay: 21, endMonth: 6, endDay: 20},
-        {name: "близнецы", startMonth: 6, startDay: 21, endMonth: 7, endDay: 22},
-        {name: "рак", startMonth: 7, startDay: 23, endMonth: 8, endDay: 22},
-        {name: "лев", startMonth: 8, startDay: 23, endMonth: 9, endDay: 22},
-        {name: "дева", startMonth: 9, startDay: 23, endMonth: 10, endDay: 22},
-        {name: "весы", startMonth: 10, startDay: 23, endMonth: 11, endDay: 21},
-        {name: "скорпион", startMonth: 11, startDay: 22, endMonth: 12, endDay: 21},
-        {name: "стрелец", startMonth: 12, startDay: 22, endMonth: 1, endDay: 19},
+        { name: "козерог", startMonth: 1, startDay: 20, endMonth: 2, endDay: 18 },
+        { name: "водолей", startMonth: 2, startDay: 19, endMonth: 3, endDay: 20 },
+        { name: "рыбы", startMonth: 3, startDay: 21, endMonth: 4, endDay: 19 },
+        { name: "овен", startMonth: 4, startDay: 20, endMonth: 5, endDay: 20 },
+        { name: "телец", startMonth: 5, startDay: 21, endMonth: 6, endDay: 20 },
+        { name: "близнецы", startMonth: 6, startDay: 21, endMonth: 7, endDay: 22 },
+        { name: "рак", startMonth: 7, startDay: 23, endMonth: 8, endDay: 22 },
+        { name: "лев", startMonth: 8, startDay: 23, endMonth: 9, endDay: 22 },
+        { name: "дева", startMonth: 9, startDay: 23, endMonth: 10, endDay: 22 },
+        { name: "весы", startMonth: 10, startDay: 23, endMonth: 11, endDay: 21 },
+        { name: "скорпион", startMonth: 11, startDay: 22, endMonth: 12, endDay: 21 },
+        { name: "стрелец", startMonth: 12, startDay: 22, endMonth: 1, endDay: 19 },
     ];
 
     for (const sign of zodiacSigns) {
@@ -1227,14 +1507,14 @@ getPrevNowNextDaysOfWeek();
 //Сделайте функцию, которая параметром будет принимать массив и удалять из него все дубли.
 function notDoubles(array) {
     let newArray = [];
-    for(i=0; i < array.length; i++){
-        if(newArray.indexOf(array[i]) === -1){
+    for (i = 0; i < array.length; i++) {
+        if (newArray.indexOf(array[i]) === -1) {
             newArray.push(array[i]);
         }
     }
     return newArray;
 }
-let array0 = [1,1,3,4,4,5,5,3,2,3];
+let array0 = [1, 1, 3, 4, 4, 5, 5, 3, 2, 3];
 notDoubles(array0);
 
 
@@ -1243,14 +1523,14 @@ notDoubles(array0);
 function notDoubles0(array) {
     let newArray = [];
     let count = 3;
-    for(i=0; i < array.length; i++){
-        if(newArray.indexOf(array[i]) === -1 || array[i] <= count ){
+    for (i = 0; i < array.length; i++) {
+        if (newArray.indexOf(array[i]) === -1 || array[i] <= count) {
             newArray.push(array[i]);
         }
     }
     return newArray;
 }
-let array_0 = [1,1,3,4,4,5,5,5,5,3,2,3];
+let array_0 = [1, 1, 3, 4, 4, 5, 5, 5, 5, 3, 2, 3];
 notDoubles0(array_0);
 
 
@@ -1265,11 +1545,11 @@ notDoubles0(array_0);
 function maxMin(array) {
     let max = array[0];
     let min = array[0];
-    for(i = 0; i < array.length; i++){
-        if(array[i]> max){
+    for (i = 0; i < array.length; i++) {
+        if (array[i] > max) {
             max = array[i];
         }
-        if (array[i]< min){
+        if (array[i] < min) {
             min = array[i];
         }
     }
@@ -1278,7 +1558,7 @@ function maxMin(array) {
         max: max,
     };
 }
-let array_1 = [1,3,4,6,78,8,1];
+let array_1 = [1, 3, 4, 6, 78, 8, 1];
 maxMin(array_1);
 
 
@@ -1286,9 +1566,9 @@ maxMin(array_1);
 //Сделайте функцию, которая параметром будет принимать число, а количество его делителей.
 function numberDivisors(number) {
     let count = 0;
-    for( i = 0; i <= number; i++){
-        if(number% i === 0){
-            count ++;
+    for (i = 0; i <= number; i++) {
+        if (number % i === 0) {
+            count++;
         }
     }
     return count;
@@ -1305,8 +1585,8 @@ numberDivisors(2);
 //Сделайте функцию, которая параметром будет принимать число, а возвращать массив его делителей.
 function numberDivisorsArray(number) {
     let array = [];
-    for( i = 0; i <= number; i++){
-        if(number% i === 0){
+    for (i = 0; i <= number; i++) {
+        if (number % i === 0) {
             array.push(i);
         }
     }
@@ -1320,14 +1600,14 @@ numberDivisorsArray(4);
 //Сделайте функцию, которая параметром будет принимать число и проверять, простое оно или нет.
 function numberDivisors_1(number) {
     let countDivisors = 0;
-    for( i = 1; i <= number; i++){
-        if(number % i === 0){
+    for (i = 1; i <= number; i++) {
+        if (number % i === 0) {
             countDivisors++;
         }
     }
-    if(countDivisors > 2){
+    if (countDivisors > 2) {
         console.log('число не простое');
-    } else { console.log('число простое');}
+    } else { console.log('число простое'); }
 }
 numberDivisors_1(18)
 
@@ -1337,13 +1617,13 @@ numberDivisors_1(18)
 function deliteNumbers(number) {
     let result_0 = 0;
     let multiplayer_0 = 1;
-    while(number > 0 ){
+    while (number > 0) {
         let digit_0 = number % 10;
-        if(digit_0 % 2 !== 0){
-            result_0 += digit_0 *multiplayer_0;
+        if (digit_0 % 2 !== 0) {
+            result_0 += digit_0 * multiplayer_0;
             multiplayer_0 *= 10;
         }
-        number = Math.floor(number/ 10);
+        number = Math.floor(number / 10);
     }
     return result_0;
 }
@@ -1528,4 +1808,3 @@ secondsToTime(126599);
 //
 // }
 // sortStr('привет, ало');
-
