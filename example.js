@@ -1800,11 +1800,146 @@ secondsToTime(126599);
 
 
 
-//function sortStr(str) {
-//     let strNew = str.split(' ');
-//     strNew.sort((a,b) => a-b)
-//     let resStr_0 = strNew.join(' ');
-//     return resStr_0;
-//
-// }
-// sortStr('привет, ало');
+//4.7.1
+//Сделайте функцию, которая параметром будет принимать текст со словами,
+// а возвращать текст, в котором эти слова будут отсортированы в алфавитном порядке.
+function sortStr(str) {
+    let strNew = str.split(' ');
+    strNew.sort();
+    let resStr_0 = strNew.join(' ');
+    return resStr_0;
+
+}
+sortStr('привет, ало');
+
+
+//№2
+// Сделайте функцию, которая параметром будет принимать два массива и возвращать массив их общих элементов.
+function findCommonElements(arr1, arr2) {
+    let commonElements = [];
+
+    for (let element of arr1) {
+        for (let element_1 of arr2) {
+            if (element === element_1) {
+                commonElements.push(element);
+                break;
+            }
+        }
+    }
+
+    return commonElements;
+}
+
+let array_2 = [1, 2, 3, 4, 5];
+let array_3 = [3, 4, 5, 6, 7];
+findCommonElements(array_2, array_3);
+
+
+// №3
+// Сделайте функцию, которая будет возвращать случайное число. Функция не должна возвращать одно
+// и тоже число два раза подряд.
+
+
+
+// №4
+// Сделайте функцию, которая параметром будет принимать массив и элемент
+// и возвращать следующий за ним элемент. Смотрите пример:
+// let arr = [1, 2, 3, 4, 5];
+
+// func(arr, 1); // 2
+// func(arr, 4); // 5
+// func(arr, 5); // 1
+function func(arr, element) {
+    let index = arr.indexOf(element);
+
+    if (index === -1) {
+        return undefined;
+    }
+
+    let nextIndex = (index + 1) % arr.length;
+    return arr[nextIndex];
+}
+
+let arr_0 = [3, 2, 3, 4, 3];
+
+console.log(func(arr_0, 1));
+console.log(func(arr_0, 4));
+console.log(func(arr_0, 5));
+
+
+
+function func_0(arr, element) {
+   let nextIndex = 0;
+    for(let i = 0; i < arr.length; i++){
+        if (arr[i] === element){
+          nextIndex = i + 1;
+        }
+    }
+
+
+    return arr[nextIndex];
+}
+
+let arr_0 = [1, 2, 3, 4, 5];
+
+console.log(func_0(arr_0, 1));
+console.log(func_0(arr_0, 4));
+console.log(func_0(arr_0, 5));
+
+
+// №1
+// Сделайте функцию, которая параметром будет принимать массив и возвращать случайный элемент этого массива.
+function getRandomElement(arr) {
+    let randomIndex = Math.floor(Math.random() * arr.length);
+    return arr[randomIndex];
+}
+
+let array_9 = [1, 2, 3, 4, 5];
+getRandomElement(array_9);
+
+
+// №2
+// Сделайте функцию, которая параметром будет принимать массив и возвращать массив из N случайных элементов этого массива.
+
+
+// №3
+// Сделайте функцию, которая параметром будет принимать массив и возвращать случайный элемент этого массива так,
+// чтобы одинаковые элементы не возвращались два раза подряд.
+
+
+// №4
+// Сделайте функцию, которая будет возвращать массив простых чисел из заданного промежутка.
+
+
+// №5
+// Сделайте функцию, которая параметрами будет принимать любое количество чисел, а возвщать их сумму.
+
+
+// №6
+// Сделайте функцию, которая заполнит массив N случайными числами из заданного промежутка так,
+// чтобы в массиве не было подряд двух одинаковых чисел.
+
+
+// №7
+// Сделайте функцию, которая заполнит массив N случайными числами из заданного промежутка так, чтобы числа не повторялись.
+
+
+//передается двумерный массив
+//найти сумму всех чисел по кроям
+function sumArrayElement(array_8){
+    let sum_77 = 0;
+    for(let i = 0; i < array_8.length; i++){
+        sum_77 += array_8[i][0] + array_8[i][array_8.length - 1];
+    }
+    return sum_77;
+}
+
+let array_99 = [
+    [0,1,0,1],
+    [4,0,0,1],
+    [6,0,0,1],
+    [0,0,0,1],
+]
+sumArrayElement(array_99);
+
+
