@@ -1869,10 +1869,10 @@ console.log(func(arr_0, 5));
 
 
 function func_0(arr, element) {
-   let nextIndex = 0;
-    for(let i = 0; i < arr.length; i++){
-        if (arr[i] === element){
-          nextIndex = i + 1;
+    let nextIndex = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === element) {
+            nextIndex = i + 1;
         }
     }
 
@@ -1880,11 +1880,11 @@ function func_0(arr, element) {
     return arr[nextIndex];
 }
 
-let arr_0 = [1, 2, 3, 4, 5];
+let arr_10 = [1, 2, 3, 4, 5];
 
-console.log(func_0(arr_0, 1));
-console.log(func_0(arr_0, 4));
-console.log(func_0(arr_0, 5));
+console.log(func_0(arr_10, 1));
+console.log(func_0(arr_10, 4));
+console.log(func_0(arr_10, 5));
 
 
 // №1
@@ -1926,20 +1926,1195 @@ getRandomElement(array_9);
 
 //передается двумерный массив
 //найти сумму всех чисел по кроям
-function sumArrayElement(array_8){
+function sumArrayElement(array_8) {
     let sum_77 = 0;
-    for(let i = 0; i < array_8.length; i++){
+    for (let i = 0; i < array_8.length; i++) {
         sum_77 += array_8[i][0] + array_8[i][array_8.length - 1];
     }
     return sum_77;
 }
 
 let array_99 = [
-    [0,1,0,1],
-    [4,0,0,1],
-    [6,0,0,1],
-    [0,0,0,1],
+    [0, 1, 0, 1],
+    [4, 0, 0, 1],
+    [6, 0, 0, 1],
+    [0, 0, 0, 1],
 ]
 sumArrayElement(array_99);
 
 
+//8.1.1
+//Дан массив:
+// [
+// 	[1, 2, 3],
+// 	[1, 2],
+// 	[1, 2, 3, 4, 5],
+// 	[1],
+// 	[1, 2, 3, 4],
+// ]
+// Отсортируйте элементы массива по возрастанию количества элементов в подмассиве.
+function sortarray(arr) {
+    for (let i = 0; i < arr.length - 1; i++) {
+        for (let j = 0; j < arr.length - i - 1; j++) {
+            if (arr[j].length > arr[j + 1].length) {
+                let temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    return arr;
+}
+
+let array_4 = [
+    [1, 2, 3],
+    [1, 2],
+    [1, 2, 3, 4, 5],
+    [1],
+    [1, 2, 3, 4],
+];
+
+sortarray(array_4);
+
+
+//№2
+// Дан массив:
+// [
+// 	[2, 4, 5],
+// 	[1, 2, 3],
+// 	[0, 1, 1],
+// 	[5, 7, 1],
+// ]
+// Отсортируйте элементы массива по возрастанию суммы элементов подмассива.
+function sorrtArray(arr) {
+    for (let i = 0; i < arr.length - 1; i++) {
+        let sumA = 0;
+        let sumB = 0;
+
+        for (let j = 0; j < arr[i].length; j++) {
+            sumA += arr[i][j];
+        }
+
+        for (let j = 0; j < arr[i + 1].length; j++) {
+            sumB += arr[i + 1][j];
+        }
+
+        if (sumA > sumB) {
+            let temp = arr[i];
+            arr[i] = arr[i + 1];
+            arr[i + 1] = temp;
+            i = -1; // Начнем сначала после обмена
+        }
+    }
+
+    return arr;
+}
+
+let myArray = [
+    [2, 4, 5],
+    [1, 2, 3],
+    [0, 1, 1],
+    [5, 7, 1],
+];
+sorrtArray(myArray);
+
+
+// №3
+// Выведите на экран следующую пирамидку:
+// x
+// xx
+// xxx
+// xxxx
+// xxxxx
+for (let i = 1; i <= 5; i++) {
+    let row = '';
+
+    for (let j = 1; j <= i; j++) {
+        row += 'x';
+    }
+
+    console.log(row);
+}
+//--
+let pyramid = '';
+
+for (let i = 1; i <= 5; i++) {
+    for (let j = 1; j <= i; j++) {
+        pyramid += 'x';
+    }
+
+}
+
+console.log(pyramid);
+
+
+//8.2.3
+// Дан массив, подмассивы которого содержат цифры:
+// [1
+// 	[1, 2, 3],
+// 	[4, 5, 6],
+// 	[7, 8, 9],
+// ]
+// Слейте элементы этого массива в числа: [123, 456, 789]
+let array_6 = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+];
+
+let resultArray = [];
+
+for (let i = 0; i < array_6.length; i++) {
+    let num = 0;
+    for (let j = 0; j < array_6[i].length; j++) {
+        num = num * 10 + array_6[i][j];
+    }
+    resultArray.push(num);
+}
+
+console.log(resultArray);
+
+
+// №4
+// Выведите на экран следующую пирамидку:
+// xx
+// xxxx
+// xxxxxx
+// xxxxxxxx
+// xxxxxxxxxx
+for (i = 1; i <= 5; i++) {
+    let row = '';
+    for (j = 1; j <= i * 2; j++) {
+        row += 'x';
+    }
+    console.log(row);
+}
+//--
+let pyramid_0 = '';
+for (let i = 1; i <= 5; i++) {
+    let row = '';
+    for (let j = 0; j < i * 2; j++) {
+        row += 'x';
+    }
+    pyramid += row + '\n';
+}
+console.log(pyramid_0);
+
+
+//8.3.2
+// Дан следующий массив:
+// let arr = [1, 2, 3, 4, 5, 6];
+// Дано также число:
+// let num = 3;
+// Добавьте в приведенный массив столько пустых строк, чтобы длина массива стала равна квадрату числа из переменной.
+let arrr = [1, 2, 3, 4, 5, 6];
+let num_1 = 3;
+
+let targetLength = num_1 * num_1;
+
+while (arrr.length < targetLength) {
+    arrr.push('');
+}
+console.log(arrr);
+
+// №3
+// Выведите на экран следующую пирамидку:
+// 111
+// 222
+// 333
+// 444
+// 555
+// 666
+// 777
+// 888
+// 999
+for (let i = 1; i <= 9; i++) {
+    let row = '';
+    for (let j = 1; j <= 3; j++) {
+        row += i;
+    }
+    console.log(row);
+}
+
+//8.4.4
+// Выведите на экран следующую пирамидку:
+// 1
+// 22
+// 333
+// 4444
+// 55555
+// 666666
+// 7777777
+// 88888888
+// 999999999
+for (let i = 1; i <= 9; i++) {
+    let row = '';
+    for (let j = 1; j <= i; j++) {
+        row += i;
+    }
+    console.log(row);
+}
+//--
+let pyramid_1 = '';
+for (let i = 1; i <= 9; i++) {
+    for (let j = 0; j < i; j++) {
+        pyramid_1 += i;
+    }
+    pyramid_1 += '\n';
+}
+console.log(pyramid_1);
+
+
+// №5
+// Дан список городов и их стран, хранящийся в следующей структуре:
+// let data = [
+// 	{
+// 		country: 'country1',
+// 		city:    'city11',
+// 	},
+// 	{
+// 		country: 'country2',
+// 		city:    'city21',
+// 	},
+// 	{
+// 		country: 'country3',
+// 		city:    'city31',
+// 	},
+// 	{
+// 		country: 'country1',
+// 		city:    'city12',
+// 	},
+// 	{
+// 		country: 'country1',
+// 		city:    'city13',
+// 	},
+// 	{
+// 		country: 'country2',
+// 		city:    'city22',
+// 	},
+// 	{
+// 		country: 'country3',
+// 		city:    'city31',
+// 	},
+// ]
+// Напишите код, которой переделает структуру данных вот в такую:
+
+// {
+// 	'country1': [
+// 		'city11', 'city12', 'city13',
+// 	],
+// 	'country2': [
+// 		'city21', 'city22'
+// 	],
+// 	'country3': [
+// 		'city31', 'city32'
+// 	],
+// }
+let data_0 = [{
+        country: 'country1',
+        city: 'city11',
+    },
+    {
+        country: 'country2',
+        city: 'city21',
+    },
+    {
+        country: 'country3',
+        city: 'city31',
+    },
+    {
+        country: 'country1',
+        city: 'city12',
+    },
+    {
+        country: 'country1',
+        city: 'city13',
+    },
+    {
+        country: 'country2',
+        city: 'city22',
+    },
+    {
+        country: 'country3',
+        city: 'city31',
+    },
+];
+
+let result_2 = {};
+
+for (let i = 0; i < data.length; i++) {
+    let item = data[i];
+    let { country, city } = item;
+
+    if (!result_2[country]) {
+        result_2[country] = [];
+    }
+
+    result_2[country].push(city);
+}
+
+console.log(resu_2);
+
+
+//8.5.5
+//Выведите на экран следующую пирамидку:
+// 1
+// 333
+// 55555
+// 7777777
+// 999999999
+let symbol = 1;
+
+for (let i = 1; i <= 5; i++) {
+    let row = '';
+    for (let j = 1; j <= symbol; j++) {
+        row += symbol;
+    }
+    console.log(row);
+    symbol += 2;
+}
+
+
+//8.6.4
+// Выведите на экран следующую пирамидку:
+// xxxxx
+// xxxx
+// xxx
+// xx
+// x
+
+for (let i = 5; i >= 1; i--) {
+    let row = '';
+    for (let j = 1; j <= i; j++) {
+        row += 'x';
+    }
+    console.log(row);
+}
+
+// №5
+// Дан список событий за определенные даты, хранящийся в следующей структуре:
+// let events = [
+// 	{
+// 		date:  '2019-12-29'
+// 		event: 'name1'
+// 	},
+// 	{
+// 		date:  '2019-12-31'
+// 		event: 'name2'
+// 	},
+// 	{
+// 		date:  '2019-12-29'
+// 		event: 'name3'
+// 	},
+// 	{
+// 		date:  '2019-12-30'
+// 		event: 'name4'
+// 	},
+// 	{
+// 		date:  '2019-12-29'
+// 		event: 'name5'
+// 	},
+// 	{
+// 		date:  '2019-12-31'
+// 		event: 'name6'
+// 	},
+// 	{
+// 		date:  '2019-12-29'
+// 		event: 'name7'
+// 	},
+// 	{
+// 		date:  '2019-12-30'
+// 		event: 'name8'
+// 	},
+// 	{
+// 		date:  '2019-12-30'
+// 		event: 'name9'
+// 	},
+// ]
+// Напишите код, которой переделает структуру данных вот в такую:
+
+// {
+// 	'2019-12-29': ['name1', 'name3', 'name5', 'name7'],
+// 	'2019-12-30': ['name4', 'name8', 'name9'],
+// 	'2019-12-31': ['name2', 'name6'],
+// }
+let events = [{
+        date: '2019-12-29',
+        event: 'name1',
+    },
+    {
+        date: '2019-12-31',
+        event: 'name2',
+    },
+    {
+        date: '2019-12-29',
+        event: 'name3',
+    },
+    {
+        date: '2019-12-30',
+        event: 'name4',
+    },
+    {
+        date: '2019-12-29',
+        event: 'name5',
+    },
+    {
+        date: '2019-12-31',
+        event: 'name6',
+    },
+    {
+        date: '2019-12-29',
+        event: 'name7',
+    },
+    {
+        date: '2019-12-30',
+        event: 'name8',
+    },
+    {
+        date: '2019-12-30',
+        event: 'name9',
+    },
+];
+
+let eventsByDate = {};
+
+for (let i = 0; i < events.length; i++) {
+    let event = events[i];
+    if (!eventsByDate[event.date]) {
+        eventsByDate[event.date] = [];
+    }
+    eventsByDate[event.date].push(event.event);
+}
+
+console.log(eventsByDate);
+
+
+//8.7.1
+//Дано слово. Перемешайте буквы этого слова в случайном порядке.
+function shuffleWord(word) {
+    let wordArray = word.split('');
+    for (let i = wordArray.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [wordArray[i], wordArray[j]] = [wordArray[j], wordArray[i]];
+    }
+    return wordArray.join('');
+}
+let originalWord = 'example';
+shuffleWord(originalWord);
+
+
+//4
+///Выведите на экран следующую пирамидку:
+// 999999999
+// 88888888
+// 7777777
+// 666666
+// 55555
+// 4444
+// 333
+// 22
+// 1
+for (let i = 9; i >= 1; i--) {
+    let row = '';
+    for (let j = 1; j <= i; j++) {
+        row += i;
+    }
+    console.log(row);
+}
+
+
+//5
+//Дан список событий за определенные даты, хранящийся в следующей структуре:
+// let events = {
+// 	'2019-12-29': ['name1', 'name3', 'name5', 
+// 		'name7'], 
+// 	'2019-12-30': ['name4', 'name8', 
+// 		'name9'], 
+// 	'2019-12-31': ['name2', 'name6'],
+// }
+// Напишите код, которой переделает структуру данных вот в такую:
+// let events = [
+// 	{
+// 		date:  '2019-12-29'
+// 		event: 'name1'
+// 	},
+// 	{
+// 		date:  '2019-12-31'
+// 		event: 'name2'
+// 	},
+// 	{
+// 		date:  '2019-12-29'
+// 		event: 'name3'
+// 	},
+// 	{
+// 		date:  '2019-12-30'
+// 		event: 'name4'
+// 	},
+// 	{
+// 		date:  '2019-12-29'
+// 		event: 'name5'
+// 	},
+// 	{
+// 		date:  '2019-12-31'
+// 		event: 'name6'
+// 	},
+// 	{
+// 		date:  '2019-12-29'
+// 		event: 'name7'
+// 	},
+// 	{
+// 		date:  '2019-12-30'
+// 		event: 'name8'
+// 	},
+// 	{
+// 		date:  '2019-12-30'
+// 		event: 'name9'
+// 	},
+// ]
+let events_0 = {
+    '2019-12-29': ['name1', 'name3', 'name5', 'name7'],
+    '2019-12-30': ['name4', 'name8', 'name9'],
+    '2019-12-31': ['name2', 'name6'],
+};
+
+let transformedEvents = [];
+
+for (let date in events_0) {
+    for (let event of events_0[date]) {
+        transformedEvents.push({ date, event });
+    }
+}
+
+console.log(transformedEvents);
+
+
+//8.8.3
+//Дан список событий за определенные месяцы, хранящийся в следующей структуре:
+// let events = [
+// 	{
+// 		date:  '2019-12'
+// 		event: 'name1'
+// 	},
+// 	{
+// 		date:  '2019-12'
+// 		event: 'name2'
+// 	},
+// 	{
+// 		date:  '2019-11'
+// 		event: 'name3'
+// 	},
+// 	{
+// 		date:  '2019-11'
+// 		event: 'name4'
+// 	},
+// 	{
+// 		date:  '2020-10'
+// 		event: 'name5'
+// 	},
+// 	{
+// 		date:  '2020-10'
+// 		event: 'name6'
+// 	},
+// 	{
+// 		date:  '2020-11'
+// 		event: 'name5'
+// 	},
+// 	{
+// 		date:  '2020-11'
+// 		event: 'name6'
+// 	},
+// 	{
+// 		date:  '2020-12'
+// 		event: 'name7'
+// 	},
+// 	{
+// 		date:  '2020-12'
+// 		event: 'name8'
+// 	},
+// 	{
+// 		date:  '2020-12'
+// 		event: 'name9'
+// 	},
+// ]
+// Напишите код, которой переделает структуру данных вот в такую:
+// {
+// 	2019: {
+// 		11: [массив событий],
+// 		12: [массив событий],
+// 	}
+// 	2020: {
+// 		10: [массив событий],
+// 		11: [массив событий],
+// 		12: [массив событий],
+// 	}
+// }
+let events_1 = [{
+        date: '2019-12',
+        event: 'name1'
+    },
+    {
+        date: '2019-12',
+        event: 'name2'
+    },
+    {
+        date: '2019-11',
+        event: 'name3'
+    },
+    {
+        date: '2019-11',
+        event: 'name4'
+    },
+    {
+        date: '2020-10',
+        event: 'name5'
+    },
+    {
+        date: '2020-10',
+        event: 'name6'
+    },
+    {
+        date: '2020-11',
+        event: 'name5'
+    },
+    {
+        date: '2020-11',
+        event: 'name6'
+    },
+    {
+        date: '2020-12',
+        event: 'name7'
+    },
+    {
+        date: '2020-12',
+        event: 'name8'
+    },
+    {
+        date: '2020-12',
+        event: 'name9'
+    },
+];
+
+let transformedEvents_0 = {};
+
+for (let i = 0; i < events_1.length; i++) {
+    let event = events_1[i];
+    let dateParts = event.date.split('-');
+    let year = dateParts[0];
+    let month = dateParts[1];
+
+    if (!transformedEvents_0[year]) {
+        transformedEvents_0[year] = {};
+    }
+
+    if (!transformedEvents_0[year][month]) {
+        transformedEvents_0[year][month] = [];
+    }
+
+    transformedEvents_0[year][month].push(event.event);
+}
+
+console.log(transformedEvents_0);
+//---
+let events_2 = [{
+        date: '2019-12',
+        event: 'name1'
+    },
+    {
+        date: '2019-12',
+        event: 'name2'
+    },
+    {
+        date: '2019-11',
+        event: 'name3'
+    },
+    {
+        date: '2019-11',
+        event: 'name4'
+    },
+    {
+        date: '2020-10',
+        event: 'name5'
+    },
+    {
+        date: '2020-10',
+        event: 'name6'
+    },
+    {
+        date: '2020-11',
+        event: 'name5'
+    },
+    {
+        date: '2020-11',
+        event: 'name6'
+    },
+    {
+        date: '2020-12',
+        event: 'name7'
+    },
+    {
+        date: '2020-12',
+        event: 'name8'
+    },
+    {
+        date: '2020-12',
+        event: 'name9'
+    },
+];
+
+let transformedEvents_1 = {};
+
+for (let i = 0; i < events_2.length; i++) {
+    let event = events_2[i];
+    let dateParts = event.date.split('-');
+    let year = dateParts[0];
+    let month = dateParts[1];
+
+    if (!transformedEvents_1[year]) {
+        transformedEvents_1[year] = {};
+    }
+
+    if (!transformedEvents_1[year][month]) {
+        transformedEvents_1[year][month] = [];
+    }
+
+    transformedEvents_1[year][month].push(event.event);
+}
+
+console.log(transformedEvents_1);
+
+
+//8.9.5
+// Дан такой список дел за определенную дату
+// let affairs = {
+// 	'2019-12-31': ['массив дел'],
+// 	'2018-11-29': ['массив дел'],
+// 	'2018-11-30': ['массив дел'],
+// 	'2018-12-27': ['массив дел'],
+// 	'2019-12-29': ['массив дел'],
+// 	'2019-12-30': ['массив дел'],
+// 	'2018-12-30': ['массив дел'],
+// 	'2018-12-31': ['массив дел'],
+// }
+// Выведите на экран все дела за 2018 год.
+let affairs = {
+    '2019-12-31': ['дело1', 'дело2'],
+    '2018-11-29': ['дело3', 'дело4'],
+    '2018-11-30': ['дело5', 'дело6'],
+    '2018-12-27': ['дело7', 'дело8'],
+    '2019-12-29': ['дело9', 'дело10'],
+    '2019-12-30': ['дело11', 'дело12'],
+    '2018-12-30': ['дело13', 'дело14'],
+    '2018-12-31': ['дело15', 'дело16'],
+};
+let year = '2018';
+for (let date in affairs) {
+    if (date.substring(0, 4) === year) {
+        console.log(`Дела на ${date}: ${affairs[date].join(', ')}`);
+    }
+}
+
+
+//8.10.2
+// Дан некоторый массив:
+// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 
+// 	11, 12] 
+// Дана переменная:
+// let n = 3;
+// Превратите этот массив в двухмерный, по n элементов в подмассиве.
+function splitArrayIntoSubarrays(arr, n) {
+    let result = [];
+    for (let i = 0; i < arr.length; i += n) {
+        result.push(arr.slice(i, i + n));
+    }
+    return result;
+}
+
+let originalArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+let n = 3;
+splitArrayIntoSubarrays(originalArray, n);
+
+
+//.3
+// Дан массив:
+// [
+// 	[1, 2, 3, 4, 5],
+// 	[1, 2, 3],
+// 	[1, 2],
+// ]
+// Добавьте в каждый подмассив столько пустых строк, чтобы количество элементов 
+// в каждом подмассиве стало равно количеству элементов в самом длинном подмассиве.
+function padArrays(arr) {
+    // Найдем максимальную длину подмассива
+    let maxLength = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].length > maxLength) {
+            maxLength = arr[i].length;
+        }
+    }
+
+    // Добавим пустые строки в каждый подмассив
+    for (let i = 0; i < arr.length; i++) {
+        while (arr[i].length < maxLength) {
+            arr[i].push('');
+        }
+    }
+
+    return arr;
+}
+
+let myArray_0 = [
+    [1, 2, 3, 4, 5],
+    [1, 2, 3],
+    [1, 2],
+];
+padArrays(myArray_0);
+
+
+//9.1.3
+// Дана некоторая строка: let str = 'abcde abcde'
+// В переменной хранятся символы: let del = 'abe';
+// Удалите из строки все указанные в переменной символы. В нашем случае должно получится следующее: 'cd cd'
+let str_1 = 'abcde abcde';
+let del = 'abe';
+let result_3 = '';
+for (let i = 0; i < str_1.length; i++) {
+    let shouldDelete = false;
+    for (let j = 0; j < del.length; j++) {
+        if (str_1[i] === del[j]) {
+            shouldDelete = true;
+            break;
+        }
+    }
+    if (!shouldDelete) {
+        result_3 += str_1[i];
+    }
+}
+console.log(result_3);
+//--
+let str_2 = 'abcde abcde';
+let del_0 = 'abe';
+let result_4 = '';
+for (let i = 0; i < str_2.length; i++) {
+    if (!del_0.includes(str_2[i])) {
+        result_4 += str_2[i];
+    }
+}
+
+console.log(result_4); // 'cd cd'
+
+
+//9.2.2
+// Два числа делятся друг на друга, в результате получается периодическая дробь. Напишите код, который определит период этой дроби.
+function getRandomWordStartingWithLetter(words, letter) {
+    let matchingWord = null;
+
+    for (const word of words) {
+        if (word[0] === letter) {
+            // С вероятностью 1/i выбираем текущее слово, где i - порядковый номер слова с нужной буквой
+            if (Math.random() < 1 / (matchingWord ? 2 : 1)) {
+                matchingWord = word;
+            }
+        }
+    }
+
+    return matchingWord;
+}
+
+// Пример использования:
+const wordArray = ["apple", "banana", "cherry", "date", "fig"];
+const startingLetter = "c";
+const randomWord = getRandomWordStartingWithLetter(wordArray, startingLetter);
+console.log("Случайное слово:", randomWord);
+//--
+function getRandomWordStartingWithLetter(words, letter) {
+    const matchingWords = [];
+
+    for (const word of words) {
+        if (word[0] === letter) {
+            matchingWords.push(word);
+        }
+    }
+
+    if (matchingWords.length === 0) {
+        return null; // Возвращаем null, если нет слов с заданной буквы
+    }
+
+    const randomIndex = Math.floor(Math.random() * matchingWords.length);
+    return matchingWords[randomIndex];
+}
+
+// Пример использования:
+const wordArray_0 = ["apple", "banana", "cherry", "date", "fig"];
+const startingLetter_0 = "c";
+const randomWord_0 = getRandomWordStartingWithLetter(wordArray_0, startingLetter_0);
+console.log("Случайное слово:", randomWord_0);
+
+
+//9.5.5
+// Сделайте функцию, которая будет устанавливать правильную форму существительного после числа. Вот как должна работать эта функция:
+// func(1, 'яблоко', 'яблока', 'яблок'); 
+// 	// выведет '1 яблоко' 
+// func(2, 'яблоко', 'яблока', 'яблок'); 
+// 	// выведет '2 яблока' 
+// func(3, 'яблоко', 'яблока', 'яблок'); 
+// 	// выведет '3 яблока' 
+// func(4, 'яблоко', 'яблока', 'яблок'); 
+// 	// выведет '4 яблока' 
+// func(5, 'яблоко', 'яблока', 'яблок'); 
+// 	// выведет '5 яблок' 
+// Вот пример для для двухзначных чисел:
+
+// func(11, 'яблоко', 'яблока', 'яблок'); 
+// 	// выведет '11 яблок' 
+// func(12, 'яблоко', 'яблока', 'яблок'); 
+// 	// выведет '12 яблок' 
+// func(21, 'яблоко', 'яблока', 'яблок'); 
+// 	// выведет '21 яблоко' 
+// func(23, 'яблоко', 'яблока', 'яблок'); 
+// 	// выведет '23 яблока' 
+// Наша функция должна работать для чисел любой длины:
+
+// func(1223421, 'яблоко', 'яблока', 'яблок'); // выведет '1223421 яблоко
+function formatNoun(number, singular, genitiveSingular, genitivePlural) {
+    if (number % 10 === 1 && number % 100 !== 11) {
+        return number + ' ' + singular;
+    } else if (
+        (number % 10 >= 2 && number % 10 <= 4) &&
+        (number % 100 < 10 || number % 100 >= 20)
+    ) {
+        return number + ' ' + genitiveSingular;
+    } else {
+        return number + ' ' + genitivePlural;
+    }
+}
+
+console.log(formatNoun(1, 'яблоко', 'яблока', 'яблок'));
+console.log(formatNoun(2, 'яблоко', 'яблока', 'яблок'));
+console.log(formatNoun(3, 'яблоко', 'яблока', 'яблок'));
+console.log(formatNoun(4, 'яблоко', 'яблока', 'яблок'));
+console.log(formatNoun(5, 'яблоко', 'яблока', 'яблок'));
+console.log(formatNoun(11, 'яблоко', 'яблока', 'яблок'));
+console.log(formatNoun(12, 'яблоко', 'яблока', 'яблок'));
+console.log(formatNoun(21, 'яблоко', 'яблока', 'яблок'));
+console.log(formatNoun(23, 'яблоко', 'яблока', 'яблок'));
+console.log(formatNoun(1223421, 'яблоко', 'яблока', 'яблок'));
+
+//9.9.5
+// Сделайте функцию, которая будет принимать число, а возвращать это число прописью. Пусть функция работает с числами до 999. Смотрите пример:
+// func(123); // выведет 'сто двадцать три' 
+function numberToWords(number) {
+    let ones = ['', 'один', 'два', 'три', 'четыре', 'пять', 'шесть', 'семь', 'восемь', 'девять'];
+    let teens = ['десять', 'одиннадцать', 'двенадцать', 'тринадцать', 'четырнадцать', 'пятнадцать', 'шестнадцать', 'семнадцать', 'восемнадцать', 'девятнадцать'];
+    let tens = ['', '', 'двадцать', 'тридцать', 'сорок', 'пятьдесят', 'шестьдесят', 'семьдесят', 'восемьдесят', 'девяносто'];
+    let hundreds = ['', 'сто', 'двести', 'триста', 'четыреста', 'пятьсот', 'шестьсот', 'семьсот', 'восемьсот', 'девятьсот'];
+
+    if (number === 0) {
+        return 'ноль';
+    }
+
+    let numArray = String(number).split('').map(Number);
+
+    if (numArray.length === 1) {
+        return ones[numArray[0]];
+    } else if (numArray.length === 2) {
+        if (numArray[0] === 1) {
+            return teens[numArray[1]];
+        } else {
+            return tens[numArray[0]] + ' ' + ones[numArray[1]];
+        }
+    } else if (numArray.length === 3) {
+        if (numArray[1] === 0 && numArray[2] === 0) {
+            return hundreds[numArray[0]];
+        } else {
+            return hundreds[numArray[0]] + ' ' + numberToWords(Number(numArray.slice(1).join('')));
+        }
+    }
+}
+
+console.log(numberToWords(123));
+
+
+//9.10.2
+// Напишите код, который определит максимальный уровень вложенности многомерного массива.
+function maxNestedLevel(arr, level = 0) {
+    if (!Array.isArray(arr)) {
+        return level;
+    }
+
+    let maxLevel = level;
+    for (let item of arr) {
+        if (Array.isArray(item)) {
+            let nestedLevel = maxNestedLevel(item, level + 1);
+            maxLevel = Math.max(maxLevel, nestedLevel);
+        }
+    }
+
+    return maxLevel;
+}
+
+let nestedArray = [1, [2, [3, [4]]]];
+let maxLevel = maxNestedLevel(nestedArray);
+console.log('Максимальный уровень вложенности:', maxLevel);
+
+
+//.3
+// Дан список каких-то данных за определенные даты, хранящийся в следующей структуре:
+// let data = [
+// 	{
+// 		year:  2019,
+// 		month: 11,
+// 		day: 20,
+// 		data: ['массив с данными']
+// 	},
+// 	{
+// 		year:  2019,
+// 		month: 11,
+// 		day: 21,
+// 		data: ['массив с данными']
+// 	},
+// 	{
+// 		year:  2019,
+// 		month: 12,
+// 		day: 25,
+// 		data: ['массив с данными']
+// 	},
+// 	{
+// 		year:  2019,
+// 		month: 12,
+// 		day: 26,
+// 		data: ['массив с данными']
+// 	},
+// 	{
+// 		year:  2020,
+// 		month: 10,
+// 		day: 29,
+// 		data: ['массив с данными']
+// 	},
+// 	{
+// 		year:  2020,
+// 		month: 10,
+// 		day: 30,
+// 		data: ['массив с данными']
+// 	},
+// 	{
+// 		year:  2020,
+// 		month: 11,
+// 		day: 19,
+// 		data: ['массив с данными']
+// 	},
+// 	{
+// 		year:  2020,
+// 		month: 11,
+// 		day: 20,
+// 		data: ['массив с данными']
+// 	},
+// }
+
+// Напишите код, которой переделает структуру данных в структуру вида:
+// {
+// 	год1: {
+// 		месяц1: {
+// 			день1: [массив данных],
+// 			день2: [массив данных],
+// 			день3: [массив данных],
+// 		}
+// 		месяц2: {
+// 			день1: [массив данных],
+// 			день2: [массив данных],
+// 			день3: [массив данных],
+// 		}
+// 	}
+// 	год2: {
+// 		месяц1: {
+// 			день1: [массив данных],
+// 			день2: [массив данных],
+// 			день3: [массив данных],
+// 		}
+// 		месяц2: {
+// 			день1: [массив данных],
+// 			день2: [массив данных],
+// 			день3: [массив данных],
+// 		}
+// 	}
+// }
+let data_1 = [{
+        year: 2019,
+        month: 11,
+        day: 20,
+        data: ['массив с данными 1']
+    },
+    {
+        year: 2019,
+        month: 11,
+        day: 21,
+        data: ['массив с данными 2']
+    },
+    {
+        year: 2019,
+        month: 12,
+        day: 25,
+        data: ['массив с данными 3']
+    },
+    {
+        year: 2019,
+        month: 12,
+        day: 26,
+        data: ['массив с данными 4']
+    },
+    {
+        year: 2020,
+        month: 10,
+        day: 29,
+        data: ['массив с данными 5']
+    },
+    {
+        year: 2020,
+        month: 10,
+        day: 30,
+        data: ['массив с данными 6']
+    },
+    {
+        year: 2020,
+        month: 11,
+        day: 19,
+        data: ['массив с данными 7']
+    },
+    {
+        year: 2020,
+        month: 11,
+        day: 20,
+        data: ['массив с данными 8']
+    }
+];
+
+let transformedData = {};
+
+for (let item of data_1) {
+    if (!transformedData[item.year]) {
+        transformedData[item.year] = {};
+    }
+
+    if (!transformedData[item.year][item.month]) {
+        transformedData[item.year][item.month] = {};
+    }
+
+    transformedData[item.year][item.month][item.day] = item.data;
+}
+
+console.log(transformedData);
+
+
+
+function getArrayDepth(arr) {
+    let maxDepth = 0;
+    for (let i = 0; i < arr.length; i++) {
+        const depth = getArrayDepth(arr[i]);
+        if (depth > maxDepth) {
+            maxDepth = depth;
+        }
+    }
+    return maxDepth + (arr.length ? 1 : 0);
+}
+const array01 = [1, [2, [3, 4, [5]]], 6];
+const depth = getArrayDepth(array01);
+console.log("глубина массива:", depth);
